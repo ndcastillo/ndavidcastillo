@@ -5,7 +5,7 @@
  */
 
 :root {
-	--accent: #2337ff;
+	--accent: #000;
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
@@ -16,6 +16,7 @@
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
 }
+/*
 @font-face {
 	font-family: "Atkinson";
 	src: url("/fonts/atkinson-regular.woff") format("woff");
@@ -30,8 +31,44 @@
 	font-style: normal;
 	font-display: swap;
 }
+*/
+@font-face {
+  font-family: "Source Serif";
+  src: url("/fonts/SourceSerif4-Light.woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Source Serif";
+  src: url("/fonts/SourceSerif4-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Source Serif";
+  src: url("/fonts/SourceSerif4-Italic.woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: "Source Serif";
+  src: url("/fonts/SourceSerif4-SemiBold.woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Source Serif";
+  src: url("/fonts/SourceSerif4-Bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
 body {
-	font-family: "Atkinson", sans-serif;
+	font-family: "Source Serif","Consolas";
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -79,7 +116,9 @@ b {
 	font-weight: 700;
 }
 a {
+  text-decoration-style:dashed;
 	color: var(--accent);
+  text-underline-offset: 8px;
 }
 a:hover {
 	color: var(--accent);
