@@ -1,4 +1,6 @@
 # Logs
+.claude
+*.yaml
 .vercel
 logs
 *.log
