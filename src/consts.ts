@@ -6,5 +6,6 @@ export const SITE_DESCRIPTION = 'Blog con contenido de tecnología, desarrollo e
 export const SITE_URL = 'https://davidcastillo.dev';
 export const SITE_AUTHOR = 'David Castillo';
 export const USER_GITHUB = 'ndcastillo';
-export const USER_INSTAGRAM='ndavidcastillo';
+export const USER_TWITTER = 'ndavidcastillo';
+export const USER_INSTAGRAM = 'ndavidcastillo';
 export const USER_LINKEDIN = 'ndavidcastillo';
