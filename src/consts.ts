@@ -9,3 +9,5 @@ export const USER_GITHUB = 'ndcastillo';
 export const USER_TWITTER = 'ndavidcastillo';
 export const USER_INSTAGRAM = 'ndavidcastillo';
 export const USER_LINKEDIN = 'ndavidcastillo';
+export const USER_EMAIL = 'nestor.castillo@ieee.org';
+export const USER_PHONE = '+593 989350354';
