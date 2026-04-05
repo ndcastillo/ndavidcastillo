@@ -50,7 +50,9 @@ const email = `mailto:${USER_EMAIL}`;
 					height="120"
 				/>
 				<div class="bio">
-          <h1>Hola, soy David</h1>
+          <h1>{SITE_AUTHOR}</h1>
+          <p class="role">Blog Personal</p>
+
           <p class="description">
           Desarrollo soluciones basadas en Ingeniería y Machine Learning para empresas de servicios o industria. Especializado en integraciones digitales, aprendizaje autónomo y servicios cloud. Divulgador de Rust y ganador IEEE ETCM 2024.
 					</p>
@@ -138,8 +140,9 @@ const email = `mailto:${USER_EMAIL}`;
 		margin-bottom: 0.2rem;
 	}
 	.role {
-		font-size: 1.2rem;
+		font-size: 1rem;
     margin: 0px;
+    padding-bottom:10px;
   }
   .description {
     font-size: 1rem;

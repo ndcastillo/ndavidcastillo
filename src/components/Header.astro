@@ -1,14 +1,18 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import SearchBar from './SearchBar.astro';
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/blog">Posts</HeaderLink>
-			<HeaderLink href="/about">Acerca de mi</HeaderLink>
+		<h2><a class="site-title" href="/">{SITE_TITLE}</a></h2>
+		<div class="nav-right">
+			<div class="internal-links">
+				<HeaderLink href="/blog">Posts</HeaderLink>
+				<HeaderLink href="/about">Acerca de mi</HeaderLink>
+			</div>
+			<SearchBar />
 		</div>
 	</nav>
 </header>
@@ -36,6 +40,11 @@ import HeaderLink from './HeaderLink.astro';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+	}
+	.nav-right {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 	nav a {
 		padding: 10px;
