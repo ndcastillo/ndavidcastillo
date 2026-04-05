@@ -1,63 +1,465 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title="Acerca de mi - David Castillo" description="Conoce más sobre mi experiencia, formación y trayectoria profesional en tecnología e innovación." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Acerca de mi</h1>
+			
+			<section class="about-intro">
+				<p>
+					Experto en TI con más de 4 años de experiencia, apasionado por crear soluciones innovadoras, integrar sistemas complejos y liderar proyectos tecnológicos. Ingeniero en Electrónica y Telecomunicaciones con reconocimientos en investigación y habilidades versátiles en diseño y desarrollo.
+				</p>
+			</section>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+			<!-- FORMACIÓN Y LOGROS -->
+			<section class="section-block">
+				<h2>Formación y Logros</h2>
+				<ul class="timeline">
+					<li>
+						<span class="year">2024</span>
+						<div>
+							<strong>Mejor Paper Award en IEEE ETCM 2024</strong>
+							<p>Ganador en la categoría Communications Society - "Telemetry System for Wind Turbines Case Study: University of Cuenca's Irquis Mini-Wind Farm"</p>
+						</div>
+					</li>
+					<li>
+						<span class="year">2024</span>
+						<div>
+							<strong>Titulación de Ingeniería</strong>
+							<p>Universidad de Cuenca · Ing. en Electrónica y Telecomunicaciones</p>
+						</div>
+					</li>
+					<li>
+						<span class="year">2021-2022</span>
+						<div>
+							<strong>Presidente de Club de Robótica</strong>
+							<p>Universidad de Cuenca · Miembro fundador de Yachana Day, organizando talleres y competencias en el área de Robótica y Electrónica</p>
+						</div>
+					</li>
+				</ul>
+			</section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+			<!-- CERTIFICACIONES -->
+			<section class="section-block">
+				<h2>Certificaciones</h2>
+				<ul class="certifications">
+					<li>Web Security, v2 - Frontend Masters</li>
+					<li>Programa de Socios de Bitrix</li>
+					<li>Complete Intro to Linux and the Command-Line</li>
+					<li>Curso Profesional de NodeJS</li>
+					<li>Presentador en la 9th Edition de IEEE ETCM</li>
+				</ul>
+			</section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+			<!-- EXPERIENCIA PROFESIONAL -->
+			<section class="section-block">
+				<h2>Experiencia Profesional</h2>
+				<ul class="companies">
+					<li>
+						<div class="company-header">
+							<strong>Código Llamingo</strong>
+							<span class="year-range">may 2025 – Presente</span>
+						</div>
+						<p class="company-role">Fundador</p>
+						<p class="company-location">Cuenca, Azuay, Ecuador</p>
+					</li>
+					<li>
+						<div class="company-header">
+							<strong>Autónomo</strong>
+							<span class="year-range">nov 2023 – Presente</span>
+						</div>
+						<p class="company-role">Consultor en TICs</p>
+						<p>Generación y gestión de redes LAN en estructuras industriales, utilizando regulaciones de cable estructurado para comunicaciones internas, administración de Edge Routers tipo Mikrotik, y microredes MESH para oficinas adyacentes.</p>
+					</li>
+					<li>
+						<div class="company-header">
+							<strong>Almacenes Juan Eljuri</strong>
+							<span class="year-range">jun 2025 – Presente</span>
+						</div>
+						<p class="company-role">Analista de Desarrollo Web</p>
+						<p class="company-location">Cuenca, Azuay, Ecuador</p>
+					</li>
+					<li>
+						<div class="company-header">
+							<strong>Luuí</strong>
+							<span class="year-range">may 2025 – feb 2026</span>
+						</div>
+						<p class="company-role">Co-Fundador & CTO</p>
+						<p>• Desarrollo de un Sistema de dispositivos IoT<br>• Liderazgo de un equipo de 9 desarrolladores</p>
+					</li>
+					<li>
+						<div class="company-header">
+							<strong>Ulpik</strong>
+							<span class="year-range">dic 2022 – may 2025</span>
+						</div>
+						<p class="company-role">Chief Technology Officer</p>
+						<p>Desarrollo de Middleware con NodeJS, Administración de LMS en WordPress, Administración de Servidores con Digital Ocean, Soporte Tecnológico.</p>
+					</li>
+					<li>
+						<div class="company-header">
+							<strong>Universidad de Cuenca</strong>
+							<span class="year-range">oct 2021 – ago 2022</span>
+						</div>
+						<p class="company-role">Presidente de Club Universitario</p>
+						<p>Presidente del Club de Robótica de la Universidad de Cuenca y Miembro Fundador de Yachana Day, encargado de organizar talleres, competencias y actividades extracurriculares de la Facultad de Ingeniería en el área de Robótica y Electrónica.</p>
+					</li>
+					<li>
+						<div class="company-header">
+							<strong>Servicio Integrado de Seguridad ECU911</strong>
+							<span class="year-range">jun 2021 – ago 2021</span>
+						</div>
+						<p class="company-role">Practicante Universitario</p>
+						<p>Desarrollo de Software de Auditoría de Historial para la Sala de Vigilancia usando Python y las librerías Pandas, Numpy y Tkinter. Desarrollo de registro SQL en MySQL para computadoras registradas en el Data Center. Automatización de reportes de seguridad ciudadana en Python.</p>
+					</li>
+				</ul>
+			</section>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+			<!-- APTITUDES PRINCIPALES -->
+			<section class="section-block">
+				<h2>Aptitudes Principales</h2>
+				<ul class="skills">
+					<li>Estrategia de diseño</li>
+					<li>Diseño de experiencia de usuario (UX)</li>
+					<li>Marca personal</li>
+					<li>Desarrollo de software</li>
+					<li>Integración de sistemas</li>
+					<li>Liderazgo tecnológico</li>
+				</ul>
+			</section>
+
+			<!-- PUBLICACIONES -->
+			<section class="section-block">
+				<h2>Publicaciones</h2>
+				<div class="publication">
+					<h3>"Telemetry System for Wind Turbines Case Study: University of Cuenca's Irquis Mini-Wind Farm"</h3>
+					<p class="publication-author">Nestor David Castillo Calle</p>
+					<p class="publication-venue">IEEE Ecuadorian Technical Chapters Meeting 2024</p>
+				</div>
+			</section>
+
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	main {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+		width: 100%;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.about-intro {
+		background: rgb(var(--gray-light));
+		padding: 2rem;
+		border-radius: 8px;
+		margin-bottom: 3rem;
+		font-size: 1.1rem;
+		line-height: 1.6;
+	}
+
+	.section-block {
+		margin: 3rem 0;
+	}
+
+	.section-block h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+		color: rgb(var(--black));
+		border-bottom: 2px solid rgb(var(--gray-light));
+		padding-bottom: 0.5rem;
+	}
+
+	/* TIMELINE */
+	.timeline {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.timeline li {
+		display: flex;
+		gap: 1.5rem;
+		align-items: flex-start;
+	}
+
+	.timeline .year {
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+		white-space: nowrap;
+		min-width: 4rem;
+		padding-top: 0.2rem;
+		font-weight: bold;
+	}
+
+	.timeline p {
+		margin: 0.3rem 0 0 0;
+		font-size: 0.95rem;
+		color: rgb(var(--gray));
+		line-height: 1.5;
+	}
+
+	/* COMPANIES */
+	.companies {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.company-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.company-header strong {
+		font-size: 1.1rem;
+	}
+
+	.year-range {
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+		white-space: nowrap;
+	}
+
+	.company-role {
+		font-size: 1rem;
+		color: rgb(var(--gray-dark));
+		margin: 0.2rem 0 0.5rem 0;
+		font-weight: 600;
+	}
+
+	.company-location {
+		font-size: 0.85rem;
+		color: rgb(var(--gray));
+		margin: 0.2rem 0;
+		font-style: italic;
+	}
+
+	.companies p:not(.company-role):not(.company-location) {
+		margin: 0.5rem 0 0 0;
+		font-size: 0.95rem;
+		line-height: 1.5;
+	}
+
+	/* CERTIFICATIONS */
+	.certifications {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		gap: 0.8rem;
+	}
+
+	.certifications li {
+		padding: 0.8rem 1rem;
+		background: rgb(var(--gray-light));
+		border-radius: 4px;
+		font-size: 0.95rem;
+	}
+
+	/* SKILLS */
+	.skills {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 0.8rem;
+	}
+
+	.skills li {
+		padding: 0.8rem 1rem;
+		background: rgb(var(--gray-light));
+		border-radius: 4px;
+		font-size: 0.95rem;
+		text-align: center;
+	}
+
+	/* PUBLICATIONS */
+	.publication {
+		padding: 1.5rem;
+		background: rgb(var(--gray-light));
+		border-radius: 8px;
+		border-left: 4px solid rgb(var(--accent));
+	}
+
+	.publication h3 {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.1rem;
+		line-height: 1.4;
+	}
+
+	.publication-author {
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+		margin: 0.3rem 0;
+	}
+
+	.publication-venue {
+		font-size: 0.85rem;
+		color: rgb(var(--gray));
+		font-style: italic;
+		margin: 0;
+	}
+
+	/* RESPONSIVE */
+	@media (max-width: 768px) {
+		main {
+			padding: 1.5rem 1rem;
+		}
+
+		h1 {
+			font-size: 2.2rem;
+		}
+
+		.about-intro {
+			padding: 1.5rem;
+			font-size: 1rem;
+		}
+
+		.section-block h2 {
+			font-size: 1.3rem;
+		}
+
+		.company-header {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+
+		.year-range {
+			font-size: 0.85rem;
+		}
+
+		.timeline li {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.timeline .year {
+			min-width: auto;
+			font-size: 0.85rem;
+		}
+
+		.skills {
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		}
+
+		.certifications {
+			gap: 0.6rem;
+		}
+
+		.publication {
+			padding: 1.2rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		main {
+			padding: 1rem 0.5rem;
+		}
+
+		h1 {
+			font-size: 1.8rem;
+			margin-bottom: 1rem;
+		}
+
+		.about-intro {
+			padding: 1.2rem;
+			margin-bottom: 2rem;
+			font-size: 0.95rem;
+		}
+
+		.section-block {
+			margin: 2rem 0;
+		}
+
+		.section-block h2 {
+			font-size: 1.2rem;
+			margin-bottom: 1rem;
+		}
+
+		.company-header strong {
+			font-size: 1rem;
+		}
+
+		.company-role {
+			font-size: 0.9rem;
+		}
+
+		.companies {
+			gap: 1.5rem;
+		}
+
+		.timeline {
+			gap: 1rem;
+		}
+
+		.timeline .year {
+			font-size: 0.8rem;
+			font-weight: 600;
+		}
+
+		.skills {
+			grid-template-columns: 1fr;
+			gap: 0.6rem;
+		}
+
+		.skills li {
+			padding: 0.6rem 0.8rem;
+			font-size: 0.9rem;
+		}
+
+		.certifications li {
+			padding: 0.6rem 0.8rem;
+			font-size: 0.9rem;
+		}
+
+		.publication {
+			padding: 1rem;
+		}
+
+		.publication h3 {
+			font-size: 1rem;
+			line-height: 1.3;
+		}
+
+		.publication-author {
+			font-size: 0.85rem;
+		}
+
+		.publication-venue {
+			font-size: 0.8rem;
+		}
+	}
+</style>

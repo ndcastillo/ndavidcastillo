@@ -129,6 +129,17 @@ const sortedYears = Object.keys(listYear).sort((a, b) => Number(b) - Number(a));
 				flex-direction: column;
 				padding: 0.5rem 0;
 			}
+
+			/* Estilos para posts sin imagen - ocupar todo el ancho */
+			.no-image a {
+				flex-direction: column;
+				gap: 0;
+			}
+			
+			.no-image .post-data {
+				width: 100%;
+				padding: 1.5rem;
+			}
 			.post-title {
 				font-size: 1.5rem;
 				font-weight: 700;
@@ -155,6 +166,19 @@ const sortedYears = Object.keys(listYear).sort((a, b) => Number(b) - Number(a));
 				display: flex;
 				align-items: center;
 				gap: 0.3rem;
+			}
+			.post-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin-top: 0.75rem;
+			}
+			.tag {
+				font-size: 0.75rem;
+				padding: 0 5px;
+				border-radius: 20px;
+				font-weight: 500;
+				transition: all 0.2s ease;
 			}
 			@media (max-width: 720px) {
 				main {
@@ -218,25 +242,31 @@ const sortedYears = Object.keys(listYear).sort((a, b) => Number(b) - Number(a));
 									</h3>
 									<ul>
 										{monthPosts.map((post) => (
-											<li>
+											<li class={post.data.heroImage ? 'has-image' : 'no-image'}>
 												<a href={`/blog/${post.id}/`}>
-													<div class="post-image">      
-														{post.data.heroImage && (
+													{post.data.heroImage && (
+														<div class="post-image">      
 															<Image 
 																width={560} 
 																height={360} 
 																src={post.data.heroImage} 
 																alt={post.data.title}
 															/>
-														)}
-													</div>
+														</div>
+													)}
 													<div class="post-data">
 														<h3 class="post-title">{post.data.title}</h3>
 														<p class="post-date">
-															<FormattedDate date={post.data.pubDate} />
+                            <FormattedDate date={post.data.pubDate} /> · <span>{post.readingTime}</span>
 														</p>
 														<p class="post-description">{post.data.description}</p>
-														<p class="post-reading-time">{post.readingTime}</p>
+														{post.data.tags && post.data.tags.length > 0 && (
+															<div class="post-tags">
+																{post.data.tags.map((tag) => (
+																	<span class="tag">#{tag}</span>
+																))}
+															</div>
+														)}
 													</div>
 												</a>
 											</li>
