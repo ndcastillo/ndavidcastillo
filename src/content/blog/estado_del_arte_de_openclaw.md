@@ -1,6 +1,6 @@
 ---
 title: "¿Que ha pasado con OpenClaw? · Breve Estado del Arte"
-description: "Nacio como un proyecto experimental y paso a hacer un proyecto de automatización extremadamente relevante en el 2026. Este es un breve estado del arte de OpenClaw, NemoClaw, OpenAI y las implicaciones de seguridad."
+description: "Nacio como un proyecto experimental y paso a hacer uno de los proyectos más relevantes de los que va el 2026. Este es un breve estado del arte de OpenClaw, NemoClaw, OpenAI y las implicaciones de seguridad."
 author: "David Castillo"
 pubDate: 2026-04-04
 tags: ["IA", "Agentes Autónomos", "OpenClaw", "Automatización", "NVIDIA", "OpenAI"]
