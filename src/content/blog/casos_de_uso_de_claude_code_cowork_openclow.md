@@ -44,10 +44,10 @@ Convierte un LLM en un agente autónomo que vive en tu computadora y se comunica
 ## Recursos de Aprendizaje
 Ahora, existen herramientas gratuitas para aprender cualquiera de estas herramientas, y para ser honesto es preferible aprender en estas los propios cursos que emite Anthropic (empresa creadora de Claude), y puedes complementar ese conocimiento con habilidades compartidas en Reddit y con tu propia experimentación.
 
-- [Anthropic Academy - Claude 101] (https://anthropic.skilljar.com/claude-101)
-- [Anthropic Academy - Framework & Foundations] (https://anthropic.skilljar.com/ai-fluency-framework-foundations)
+- [Anthropic Academy - Claude 101](https://anthropic.skilljar.com/claude-101)
+- [Anthropic Academy - Framework & Foundations](https://anthropic.skilljar.com/ai-fluency-framework-foundations)
 - [Anthropic Academy - Introducción a los subagentes](https://anthropic.skilljar.com/introduction-to-subagents)
-- [Anthropic Academy - Introducción a Claude Cowork] (https://anthropic.skilljar.com/introduction-to-claude-cowork)
+- [Anthropic Academy - Introducción a Claude Cowork](https://anthropic.skilljar.com/introduction-to-claude-cowork)
 - [Docs OpenClaw - Personal Assistant Setup](https://docs.openclaw.ai/start/openclaw)
 
 
