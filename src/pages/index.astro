@@ -6,10 +6,17 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import HomeOgImage from '../assets/blog-placeholder-1.jpg';
 import { USER_WHATSAPP_URL, USER_PROFILE, USER_PHONE, SITE_AUTHOR, SITE_DESCRIPTION, SITE_HOME_DESCRIPTION, SITE_TITLE, SITE_URL, USER_GITHUB, USER_TWITTER, USER_LINKEDIN, USER_EMAIL, USER_INSTAGRAM, USER_TIKTOK, USER_YOUTUBE } from '../consts';
+import {readingTime} from '../utils/readingTime'
 
-const posts = (await getCollection('blog'))
+const posts = (await getCollection('blog', ({ data }) => {
+	return data.draft !== true;
+}))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 10);
+	.slice(0, 10)
+	.map(post => ({
+		...post,
+		readingTime: readingTime(post.body, "es")
+	}));
 
   const redes = {
     "GITHUB": "https://github.com/" + USER_GITHUB,
@@ -100,7 +107,7 @@ const email = `mailto:${USER_EMAIL}`;
 							<a href={`/blog/${post.id}/`}>
 								<span class="post-title">{post.data.title}</span>
 								<span class="post-date">
-									<FormattedDate date={post.data.pubDate} />
+									<FormattedDate date={post.data.pubDate} /> · {post.readingTime}
 								</span>
 							</a>
 							<p class="post-description">{post.data.description}</p>

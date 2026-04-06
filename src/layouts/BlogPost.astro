@@ -6,10 +6,14 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_AUTHOR, SITE_URL } from '../consts';
+import {readingTime} from '../utils/readingTime';
 
-type Props = CollectionEntry<'blog'>['data'] & { slug?: string };
+type Props = CollectionEntry<'blog'>['data'] & { slug?: string, body?: string };
 
-const { title, description, pubDate, updatedDate, heroImage, slug } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, slug, body } = Astro.props;
+
+// Calcular el tiempo de lectura
+const readTime = body ? readingTime(body, "es") : null;
 
 // Obtener el slug del URL si no se pasa como prop
 const postSlug = slug || Astro.url.pathname.split('/').filter(Boolean).pop();
@@ -122,6 +126,7 @@ li{
 					<div class="title">
 						<div class="date">
 							<FormattedDate date={pubDate} />
+							{readTime && <span> · {readTime}</span>}
 							{
 								updatedDate && (
 									<div class="last-updated-on">
