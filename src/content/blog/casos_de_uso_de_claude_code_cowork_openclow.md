@@ -1,6 +1,6 @@
 ---
 title: "Casos de uso para Claude, Claude Code, Claude Cowork  y OpenClaw - Casos de aplicación mas frecuentes."
-description: ""
+description: "Hoy en dia existen un centenar de aplicaciones, y Claude a sobresalido sobre todas ellas, pero ¿porque?, hoy veremos los casos de uso en los cuales a destacado."
 author: "David Castillo"
 pubDate: 2026-04-06
 tags: ["Claude","Claude Code","Claude Cowork","OpenClaw","Anthropic","Peter Steimberger","educacion"]
