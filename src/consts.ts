@@ -16,3 +16,6 @@ export const USER_PHONE = '+593 989350354';
 export const USER_WHATSAPP_URL = "https://wa.me/593989350354";
 export const USER_PROFILE = '/profile_image.jpg';
 
+// Analytics
+export const PUBLIC_GA_MEASUREMENT_ID = 'G-T30Q4NG4CY';
+

@@ -12,6 +12,12 @@ const searchData = posts.map(post => ({
   pubDate: post.data.pubDate.toISOString(),
   tags: post.data.tags || []
 }));
+
+// Generate unique IDs for this instance
+const uniqueId = Math.random().toString(36).substr(2, 9);
+const modalId = `searchModal-${uniqueId}`;
+const inputId = `searchInput-${uniqueId}`;
+const resultsId = `searchResults-${uniqueId}`;
 ---
 
 <!-- Botón de búsqueda -->
@@ -23,8 +29,8 @@ const searchData = posts.map(post => ({
   Ctrl + k
 </button>
 
-<!-- Modal de búsqueda - Solo renderizar uno por página -->
-<div class="search-modal" id="searchModal" data-search-modal>
+<!-- Modal de búsqueda -->
+<div class="search-modal" id={modalId} data-search-modal>
   <div class="search-backdrop"></div>
   <div class="search-container">
     <div class="search-header">
@@ -35,7 +41,7 @@ const searchData = posts.map(post => ({
         </svg>
         <input 
           type="text" 
-          id="searchInput" 
+          id={inputId} 
           placeholder="Buscar artículos..." 
           autocomplete="off"
           autofocus
@@ -43,21 +49,18 @@ const searchData = posts.map(post => ({
         <kbd class="search-shortcut">ESC</kbd>
       </div>
     </div>
-    <div class="search-results" id="searchResults">
+    <div class="search-results" id={resultsId}>
       <p class="search-hint">Escribe para buscar artículos por título, descripción o tags...</p>
     </div>
   </div>
 </div>
 
-<script define:vars={{ searchData }}>
-  // Only run if this is the first SearchBar instance
-  if (!window.searchInitialized) {
-    window.searchInitialized = true;
-    
-    const modal = document.getElementById('searchModal');
-    const input = document.getElementById('searchInput');
-    const resultsContainer = document.getElementById('searchResults');
-    const backdrop = document.querySelector('.search-backdrop');
+<script define:vars={{ searchData, modalId, inputId, resultsId }}>
+  // Initialize this specific SearchBar instance
+  const modal = document.getElementById(modalId);
+  const input = document.getElementById(inputId);
+  const resultsContainer = document.getElementById(resultsId);
+  const backdrop = modal.querySelector('.search-backdrop');
 
   function openSearch() {
     modal.classList.add('active');
@@ -142,59 +145,62 @@ const searchData = posts.map(post => ({
     return result;
   }
 
-  // Event listeners for all search triggers
-  function attachSearchListeners() {
-    const triggers = document.querySelectorAll('.search-trigger');
-    triggers.forEach(trigger => {
-      trigger.removeEventListener('click', openSearch); // Remove any existing listeners
-      trigger.addEventListener('click', function(e) {
+  // Global event listeners (only set once)
+  if (!window.searchGlobalListenersSet) {
+    window.searchGlobalListenersSet = true;
+    
+    // Handle search trigger clicks globally
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.search-trigger')) {
         e.preventDefault();
         e.stopPropagation();
-        openSearch();
-      });
+        // Find the first available modal and open it
+        const firstModal = document.querySelector('.search-modal');
+        if (firstModal) {
+          const firstInput = firstModal.querySelector('input[id^="searchInput"]');
+          firstModal.classList.add('active');
+          if (firstInput) firstInput.focus();
+          document.body.style.overflow = 'hidden';
+        }
+      }
+    });
+    
+    // Global keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      // Ctrl+K o Cmd+K para abrir
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        const firstModal = document.querySelector('.search-modal');
+        if (firstModal) {
+          const firstInput = firstModal.querySelector('input[id^="searchInput"]');
+          firstModal.classList.add('active');
+          if (firstInput) firstInput.focus();
+          document.body.style.overflow = 'hidden';
+        }
+      }
+      // Escape para cerrar cualquier modal activo
+      const activeModal = document.querySelector('.search-modal.active');
+      if (e.key === 'Escape' && activeModal) {
+        activeModal.classList.remove('active');
+        const input = activeModal.querySelector('input[id^="searchInput"]');
+        if (input) input.value = '';
+        const results = activeModal.querySelector('[id^="searchResults"]');
+        if (results) results.innerHTML = '<p class="search-hint">Escribe para buscar artículos por título, descripción o tags...</p>';
+        document.body.style.overflow = '';
+      }
+      // Enter para ir a la página de búsqueda
+      const activeInput = document.querySelector('.search-modal.active input[id^="searchInput"]');
+      if (e.key === 'Enter' && activeInput && activeInput.value.trim()) {
+        window.location.href = `/search?q=${encodeURIComponent(activeInput.value.trim())}`;
+      }
     });
   }
   
-  // Attach listeners initially
-  attachSearchListeners();
-  
-  // Re-attach listeners when DOM changes (for mobile menu)
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'childList') {
-        attachSearchListeners();
-      }
-    });
-  });
-  
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-  
+  // Instance-specific listeners
   backdrop.addEventListener('click', closeSearch);
-  
   input.addEventListener('input', (e) => {
     search(e.target.value);
   });
-
-  document.addEventListener('keydown', (e) => {
-    // Ctrl+K o Cmd+K para abrir
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-      e.preventDefault();
-      openSearch();
-    }
-    // Escape para cerrar
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeSearch();
-    }
-    // Enter para ir a la página de búsqueda
-    if (e.key === 'Enter' && modal.classList.contains('active') && input.value.trim()) {
-      window.location.href = `/search?q=${encodeURIComponent(input.value.trim())}`;
-    }
-  });
-  
-  } // End of searchInitialized check
 </script>
 
 <style>
@@ -266,6 +272,8 @@ const searchData = posts.map(post => ({
     background: rgb(var(--gray-light), 0.3);
     border-radius: 12px;
     padding: 0.75rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .search-icon {
@@ -273,7 +281,7 @@ const searchData = posts.map(post => ({
     flex-shrink: 0;
   }
 
-  #searchInput {
+  [id^="searchInput"] {
     flex: 1;
     border: none;
     background: transparent;
@@ -281,9 +289,11 @@ const searchData = posts.map(post => ({
     color: rgb(var(--black));
     outline: none;
     font-family: inherit;
+    width: 100%;
+    min-width: 0;
   }
 
-  #searchInput::placeholder {
+  [id^="searchInput"]::placeholder {
     color: rgb(var(--gray));
   }
 
@@ -411,11 +421,12 @@ const searchData = posts.map(post => ({
 
   /* Highlight */
   :global(.search-results mark) {
-    background: rgba(var(--accent), 0.15);
+    background: yellow;
     color: rgb(var(--accent));
     padding: 0 2px;
     border-radius: 2px;
   }
+
 
   /* Responsive */
   @media (max-width: 720px) {
@@ -432,8 +443,9 @@ const searchData = posts.map(post => ({
       display: none;
     }
 
-    #searchInput {
+    [id^="searchInput"] {
       font-size: 1rem;
     }
   }
+
 </style>

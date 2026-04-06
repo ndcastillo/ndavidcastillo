@@ -14,6 +14,10 @@ import SearchBar from './SearchBar.astro';
 			</div>
 			<SearchBar />
 		</div>
+		<!-- SearchBar para móvil (solo modal, sin botón) -->
+		<div class="mobile-search-modal">
+			<SearchBar />
+		</div>
 		<button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
 			<span class="hamburger-line"></span>
 			<span class="hamburger-line"></span>
@@ -31,6 +35,7 @@ import SearchBar from './SearchBar.astro';
 					<circle cx="11" cy="11" r="8"></circle>
 					<path d="m21 21-4.3-4.3"></path>
         </svg>
+        Buscar Articulo
 			</button>
 		</div>
 	</div>
@@ -164,7 +169,7 @@ import SearchBar from './SearchBar.astro';
 	.mobile-search {
 		width: 100%;
 		display: flex;
-		justify-content: center;
+    gap:10px;
 	}
 	
 	.mobile-search .search-trigger {
@@ -183,6 +188,14 @@ import SearchBar from './SearchBar.astro';
 	.mobile-search .search-trigger:hover {
 		background: rgba(var(--gray-light), 0.5);
 		color: rgb(var(--black));
+	}
+	
+	.mobile-search-modal {
+		display: none;
+	}
+	
+	.mobile-search-modal .search-trigger {
+		display: none;
 	}
 	
 	/* Show mobile menu when active */
