@@ -3,6 +3,7 @@
 
 export const SITE_TITLE = 'David Castillo';
 export const SITE_DESCRIPTION = 'Blog con contenido de tecnología, desarrollo e innovación.';
+export const SITE_HOME_DESCRIPTION = 'Desarrollo de soluciones basadas en Ingeniería y Machine Learning para empresas de servicios o industria. Blog con contenido de tecnología, desarrollo e innovación.';
 export const SITE_URL = 'https://davidcastillo.dev';
 export const SITE_AUTHOR = 'David Castillo';
 export const USER_GITHUB = 'ndcastillo';
