@@ -7,9 +7,12 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_AUTHOR, SITE_URL } from '../consts';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & { slug?: string };
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, slug } = Astro.props;
+
+// Obtener el slug del URL si no se pasa como prop
+const postSlug = slug || Astro.url.pathname.split('/').filter(Boolean).pop();
 ---
 
 <html lang="es">
@@ -63,13 +66,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				color: rgb(var(--gray-dark));
 			}
 			.title {
-				margin-bottom: 1em;
+        margin-bottom: 1em;
 				padding: 1em 0;
 				text-align: center;
 				line-height: 1;
 			}
 			.title h1 {
-				margin: 0 0 0.5em 0;
+				margin: 0 0 0 0;
 			}
 			.date {
 				margin-bottom: 0.5em;
@@ -77,6 +80,25 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.last-updated-on {
 				font-style: italic;
+			}
+			.edit-button {
+				display: inline-flex;
+				align-items: center;
+        gap: 5px;
+        justify-content:flex-end;
+				color: rgb(var(--gray-dark));
+				font-size: 0.9rem;
+				font-weight: 500;
+				transition: all 0.2s ease;
+        // margin-top: 1rem;
+			}
+			.edit-button:hover {
+				background: rgba(0, 0, 0, 0.08);
+				border-color: rgba(0, 0, 0, 0.2);
+				color: rgb(var(--black));
+			}
+			.edit-button svg {
+				flex-shrink: 0;
 			}
       article{
 
@@ -112,6 +134,19 @@ li{
 						<hr />
 					</div>
 					<slot />
+					<a 
+						href={`https://github.com/ndcastillo/ndavidcastillo/blob/main/src/content/blog/${postSlug}.md`}
+						class="edit-button"
+						target="_blank"
+						rel="noopener noreferrer"
+						title="Editar en GitHub"
+					>
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+							<path d="m18.5 2.5 2 2L13 12l-4 1 1-4 7.5-7.5z"></path>
+						</svg>
+						Editar en GitHub
+					</a>
 				</div>
 			</article>
 		</main>

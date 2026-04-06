@@ -15,15 +15,16 @@ const searchData = posts.map(post => ({
 ---
 
 <!-- Botón de búsqueda -->
-<button class="search-trigger" aria-label="Buscar artículos" title="Buscar (Ctrl+K)">
+<button class="search-trigger" aria-label="Buscar artículos" title="Buscar (Ctrl+k)">
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="11" cy="11" r="8"></circle>
     <path d="m21 21-4.3-4.3"></path>
   </svg>
+  Ctrl + k
 </button>
 
-<!-- Modal de búsqueda -->
-<div class="search-modal" id="searchModal">
+<!-- Modal de búsqueda - Solo renderizar uno por página -->
+<div class="search-modal" id="searchModal" data-search-modal>
   <div class="search-backdrop"></div>
   <div class="search-container">
     <div class="search-header">
@@ -49,11 +50,14 @@ const searchData = posts.map(post => ({
 </div>
 
 <script define:vars={{ searchData }}>
-  const modal = document.getElementById('searchModal');
-  const input = document.getElementById('searchInput');
-  const resultsContainer = document.getElementById('searchResults');
-  const trigger = document.querySelector('.search-trigger');
-  const backdrop = document.querySelector('.search-backdrop');
+  // Only run if this is the first SearchBar instance
+  if (!window.searchInitialized) {
+    window.searchInitialized = true;
+    
+    const modal = document.getElementById('searchModal');
+    const input = document.getElementById('searchInput');
+    const resultsContainer = document.getElementById('searchResults');
+    const backdrop = document.querySelector('.search-backdrop');
 
   function openSearch() {
     modal.classList.add('active');
@@ -138,8 +142,36 @@ const searchData = posts.map(post => ({
     return result;
   }
 
-  // Event listeners
-  trigger.addEventListener('click', openSearch);
+  // Event listeners for all search triggers
+  function attachSearchListeners() {
+    const triggers = document.querySelectorAll('.search-trigger');
+    triggers.forEach(trigger => {
+      trigger.removeEventListener('click', openSearch); // Remove any existing listeners
+      trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openSearch();
+      });
+    });
+  }
+  
+  // Attach listeners initially
+  attachSearchListeners();
+  
+  // Re-attach listeners when DOM changes (for mobile menu)
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'childList') {
+        attachSearchListeners();
+      }
+    });
+  });
+  
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+  
   backdrop.addEventListener('click', closeSearch);
   
   input.addEventListener('input', (e) => {
@@ -161,6 +193,8 @@ const searchData = posts.map(post => ({
       window.location.href = `/search?q=${encodeURIComponent(input.value.trim())}`;
     }
   });
+  
+  } // End of searchInitialized check
 </script>
 
 <style>
@@ -176,6 +210,7 @@ const searchData = posts.map(post => ({
     color: rgb(var(--gray-dark));
     border-radius: 8px;
     transition: all 0.2s ease;
+    gap:5px
   }
 
   .search-trigger:hover {
