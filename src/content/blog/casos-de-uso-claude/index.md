@@ -5,7 +5,7 @@ author: "David Castillo"
 pubDate: 2026-04-06
 tags: ["Claude","Claude Code","Claude Cowork","OpenClaw","Anthropic","Peter Steimberger","educacion"]
 lang: "es"
-draft: true
+draft: false 
 ---
 
 <b>tl;dr Claude para una exploración rápida, Claude Code para codificación y generación de subagentes, Claude Cowork para integrar herramientas de ofimática (hojas de cálculo y dashboards sencillos), y OpenClaw para generar asistentes autómatas que trabajen 24/7.</b>
@@ -14,6 +14,8 @@ draft: true
 *Es importante mencionar que estas son herramientas de [LLM](https://arstechnica.com/ai/2024/12/why-ai-language-models-choke-on-too-much-text/), y se deben pensar siempre como una reconstrucción de colecciones de razonamientos aleatorios, o también pueden verse como una configuración de sistemas [estocásticos](https://dle.rae.es/estoc%C3%A1stico), las cuales pueden confluir en razonamientos muy bien estructurados o también pueden llegar a encontrarse con ruido que les llevará a respuestas erróneas y con alucinaciones (que no quedes como un alucín). Por cuanto debes tener una responsabilidad perentoria en la revisión de cada una de sus afirmaciones, corroborando con fuentes con un rigor de verificación y validación (fuentes indexadas, estándares internacionales, documentación validada, etc).*
 
 Es muy probable que te encuentres atosigado por la gran cantidad de información sobre herramientas de IA, y la "infoxicación" en redes sociales y el desconocimiento pueden terminar gastando en vano en una suscripción que nunca le darás uso. De entre toda esa nube de aplicaciones de rápido marketing se encuentra una que ha destacado por su desempeño y más que nada por su filosofía, te presento a Claude (de Anthropic). Por eso hoy te mostraré el uso común de todas las variantes de Claude, dónde aprender cómo usarlas y también cómo crear asistentes autómatas usando sus modelos de LLM.
+
+![Mapa de Anthropic](./anthropic_claude_map.png)
 
 ## Claude (a secas)
 Es el clásico chat con un modelo de LLM (como lo es Gemini, ChatGPT, Llama y otros), tú preguntas y él responde, y dentro de la conversación puedes cambiar de enfoque alimentando nuevo contexto o información relevante, de igual forma puedes afinar la salida realizando una petición de respuesta con un formato en concreto. 
