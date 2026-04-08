@@ -120,8 +120,43 @@ textarea {
 input {
 	font-size: 16px;
 }
+/* Tablas responsive con scroll horizontal */
+.prose :where(table) {
+	display: block;
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch; /* Smooth scroll en iOS */
+}
+
 table {
 	width: 100%;
+	border-collapse: collapse;
+	margin: 2em 0;
+}
+
+table th,
+table td {
+	padding: 0.75em 1em;
+	border: 1px solid rgb(var(--gray-light));
+	text-align: left;
+}
+
+table th {
+	background-color: rgb(var(--gray-light));
+	font-weight: 600;
+	color: rgb(var(--black));
+}
+
+/* Responsive en móviles */
+@media (max-width: 720px) {
+	table {
+		font-size: 0.9em;
+	}
+	
+	table th,
+	table td {
+		padding: 0.5em 0.75em;
+	}
 }
 img {
 	max-width: 100%;
