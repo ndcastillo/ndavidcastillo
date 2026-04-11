@@ -10,13 +10,14 @@ import {readingTime} from '../utils/readingTime';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug?: string, body?: string };
 
-const { title, description, pubDate, updatedDate, heroImage, slug, body } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, slug, body, tags } = Astro.props;
 
 // Calcular el tiempo de lectura
 const readTime = body ? readingTime(body, "es") : null;
 
 // Obtener el slug del URL si no se pasa como prop
 const postSlug = slug || Astro.url.pathname.split('/').filter(Boolean).pop();
+
 ---
 
 <html lang="es">
@@ -139,6 +140,12 @@ li{
 						<hr />
 					</div>
 					<slot />
+          <hr/>
+        <p>
+        { tags && tags.map((tag)=>(
+        <span> #{tag},</span>
+        )) }
+        </p>
 					<a 
 						href={`https://github.com/ndcastillo/ndavidcastillo/blob/main/src/content/blog/${postSlug}.md`}
 						class="edit-button"

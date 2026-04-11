@@ -1,0 +1,109 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title="404 - Página no encontrada" description="La página que buscas no existe" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="container">
+				<div class="content">
+					<h1>404</h1>
+					<p class="subtitle">Oops, página no encontrada</p>
+					<img src="/white_cat_404.gif" alt="Gato blanco confundido" class="cat-image" />
+					<p class="message">Parece que este gatito tampoco puede encontrar lo que buscas.</p>
+					<a href="/" class="home-link">Volver al inicio</a>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 60vh;
+		padding: 2rem 1rem;
+	}
+
+	.container {
+		max-width: 720px;
+		width: 100%;
+	}
+
+	.content {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	h1 {
+		font-size: 4rem;
+		margin: 0;
+		font-weight: 700;
+	}
+
+	.subtitle {
+		font-size: 1.5rem;
+		margin: 0;
+	}
+
+	.cat-image {
+		max-width: 300px;
+		width: 100%;
+		height: auto;
+		border-radius: 8px;
+		object-fit: contain;
+	}
+
+	.message {
+		font-size: 1.1rem;
+		margin: 0;
+	}
+
+	.home-link {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		color: white;
+		text-decoration: none;
+		border-radius: 4px;
+		font-weight: 600;
+		transition: background-color 0.3s ease;
+		margin-top: 0.5rem;
+	}
+
+	.home-link:hover {
+		background-color: var(--accent);
+	}
+
+	@media (max-width: 720px) {
+		h1 {
+			font-size: 3rem;
+		}
+
+		.subtitle {
+			font-size: 1.2rem;
+		}
+
+		.cat-image {
+			max-width: 250px;
+		}
+
+		main {
+			min-height: 50vh;
+		}
+	}
+</style>
