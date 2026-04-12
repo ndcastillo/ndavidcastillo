@@ -1,30 +1,30 @@
 ---
-title: "¿Cuando usar las herramientas de Claude?"
+title: "¿Cuándo usar las herramientas de Claude?"
 description: "Hoy en día existen un centenar de aplicaciones, y Claude ha sobresalido sobre todas ellas, pero ¿por qué?, hoy veremos los casos de uso en los cuales ha destacado."
 author: "David Castillo"
-pubDate: 2026-04-06
-tags: ["Claude","Claude Code","Claude Cowork","OpenClaw","Anthropic","Peter Steimberger","educacion"]
+pubDate: 2026-04-12
+tags: ["Claude","Claude Code","Claude Cowork","Anthropic","Peter Steimberger","educacion"]
 lang: "es"
 draft: true 
 ---
 
-> **tl;dr** Claude para una exploración rápida, Claude Code para codificación y generación de subagentes, Claude Cowork para integrar herramientas de ofimática (hojas de cálculo y dashboards sencillos), y OpenClaw para generar asistentes autómatas que trabajen 24/7.
+> **tl;dr** Claude para una exploración rápida, Claude Code para codificación y generación de subagentes, y Claude Cowork para integrar herramientas de ofimática (hojas de cálculo y dashboards sencillos).
 
 **Manifiesto de ética**
 *Es importante mencionar que estas son herramientas de [LLM](https://arstechnica.com/ai/2024/12/why-ai-language-models-choke-on-too-much-text/), y se deben pensar siempre como una reconstrucción de colecciones de razonamientos aleatorios, o también pueden verse como una configuración de sistemas [estocásticos](https://dle.rae.es/estoc%C3%A1stico), las cuales pueden confluir en razonamientos muy bien estructurados o también pueden llegar a encontrarse con ruido que les llevará a respuestas erróneas y con alucinaciones (que no quedes como un alucín).*
 
 *Por cuanto debes tener una responsabilidad perentoria en la revisión de cada una de sus afirmaciones, corroborando con fuentes de rigor (fuentes indexadas, estándares internacionales, etc).*
 
-Es muy probable que te encuentres atosigado por la gran cantidad de información sobre herramientas de IA, y la "infoxicación" en redes sociales pueden llegar a confundirte y terminar gastando en una suscripción que nunca le darás uso. 
+Es muy probable que te encuentres atosigado por la gran cantidad de información sobre herramientas de IA, y la "infoxicación" en redes sociales puede llegar a confundirte y terminar gastando en una suscripción que nunca le darás uso.
 
-De entre toda esa nube de marketing de patito, nos podemos encontrar con joyas como Claude, que destaca por su filosofía, y [por oponerse al gobierno del señor naranja](https://arstechnica.com/tech-policy/2026/03/anthropic-sues-us-over-blacklisting-white-house-calls-firm-radical-left-woke/) en pro de la protección de la privacidad de sus clientes (valido solo para compradores americanos).
+De entre toda esa nube de marketing de patito, nos podemos encontrar con joyas como Claude, que destaca por su filosofía, y [por oponerse al gobierno del señor naranja](https://arstechnica.com/tech-policy/2026/03/anthropic-sues-us-over-blacklisting-white-house-calls-firm-radical-left-woke/) en pro de la protección de la privacidad de sus clientes (válido solo para compradores americanos), y muy seguramente [ya no vuelvas a usar ChatGPT](https://x.com/rubenhassid/status/2024871775574593798).
 
-Pero que nos ofrece Claude, podemos simplificarlo así:
+Pero ¿qué nos ofrece Claude? Podemos simplificarlo así:
 
-1. Herramientas para personas no técnicas y 
-2. Herramientas para personas técnicas. 
+1. Herramientas para personas no técnicas y
+2. Herramientas para personas técnicas.
 
-Pero dicha clasificación pierde interés y desaprovecha la potencialidad que tienen muchas de sus herramientas, otra manera de poder clasificar a los productos Claude puede ser por sus [modelos de LLM](https://platform.claude.com/docs/es/about-claude/models/overview), como los actualmente desarrollados o en ambiente de "calidad" a dia de hoy (Abril del 2025) como lo son:
+Pero dicha clasificación pierde interés y desaprovecha la potencialidad que tienen muchas de sus herramientas. Otra manera de clasificar los productos de Claude puede ser por sus [modelos de LLM](https://platform.claude.com/docs/es/about-claude/models/overview), como los actualmente desarrollados o en ambiente de calidad a día de hoy (abril del 2026):
 
 1. **Opus 4.6** — Su modelo más inteligente, orientado a la construcción de agentes y al uso en la codificación.
 
@@ -32,17 +32,17 @@ Pero dicha clasificación pierde interés y desaprovecha la potencialidad que ti
 
 3. **Haiku 4.5** — Su modelo más rápido con inteligencia casi de frontera, usado para aplicaciones que tienen un enfoque en la velocidad.
 
-Y también se debe mencionar a uno de sus modelos que esta tendencia "tendencia generada por los mismos de anthropic" llamado ["Mythos"](https://red.anthropic.com/2026/mythos-preview/), enfocado en identificar y explotar vulnerabilidades de seguridad en sistemas tan críticos como OpenBSD, FFmpeg, el kernel de Linux o navegadores web.
+Y también se debe mencionar a uno de sus modelos en tendencia —generada por los propios de Anthropic— llamado ["Mythos"](https://red.anthropic.com/2026/mythos-preview/), enfocado en identificar y explotar vulnerabilidades de seguridad en sistemas tan críticos como OpenBSD, FFmpeg, el kernel de Linux o navegadores web.
 
-Aunque se debe ser esceptico, ya que se sabe muy bien que el marketing puede engañarte al momento de venderte un producto, entonces hasta que un cliente directo lo pruebe [dichas afirmaciones deben tomarse como exageradas y de especulación](https://www.cnbc.com/2026/04/07/anthropic-claude-mythos-ai-hackers-cyberattacks.html).
+Aunque se debe ser escéptico, ya que se sabe muy bien que el marketing puede engañarte al momento de venderte un producto, y hasta que un cliente directo lo pruebe [dichas afirmaciones deben tomarse con cautela](https://www.cnbc.com/2026/04/07/anthropic-claude-mythos-ai-hackers-cyberattacks.html).
 
-Pero para no desviarnos del tema principal, yo clasificaria a los productos de claude de la siguiente manera:
+Pero para no desviarnos del tema principal, yo clasificaría los productos de Claude de la siguiente manera:
 
 1. Claude (a secas)
 2. Claude Code
 3. Claude Cowork
 
-Que son los productos finales con los que la gente trabaja diariamente y que es mas importante saber como utilizar la herramienta dia a dia, que saber cual es el modelo de frontera mas "inteligente" o que espero que "me hable de una forma convincente a mis ideas".
+Que son los productos finales con los que la gente trabaja diariamente, y es más importante saber cómo utilizar la herramienta día a día que saber cuál es el modelo de frontera más "inteligente".
 
 ![Mapa de Anthropic](./anthropic_claude_map.gif)
 
@@ -52,47 +52,45 @@ Todos lo conocen como el clásico chat donde tú preguntas y él responde, y en 
 ### ¿Para qué usarlo?
 Lo ideal sería para tareas específicas y bien definidas, una investigación rápida, una exploración de información, o diseños de mapas y esquemas iniciales, petición de cálculos rápidos y elasticidad de contextos.
 
-
-Por ejemplo en la [propia documentación de Claude](https://claude.com/resources/use-cases) sugiere utilizarlo para: revisar y redlinear contratos legales, convertir investigaciones en presentaciones, planificar revisiones de literatura científica, analizar datos financieros bajo distintos escenarios, o simplemente como asistente personal para organizar ideas y tareas cotidianas.
+Por ejemplo, en la [propia documentación de Claude](https://claude.com/resources/use-cases) sugiere utilizarlo para: revisar y redlinear contratos legales, convertir investigaciones en presentaciones, planificar revisiones de literatura científica, analizar datos financieros bajo distintos escenarios, o simplemente como asistente personal para organizar ideas y tareas cotidianas.
 
 ![Caso de uso común](./case_use_1.png)
 
 
-### Claude Embedido
-Estas son extensiones de Claude para un software en especifico como Excel o Chrome, por ejemplo [la extensión de Claude para Excel](https://claude.com/resources/use-cases/update-your-financial-model-after-earnings) puede ayudar a realizar un proceso de limpieza de datos, un análisis exploratorio o paneles (dashboard) de estadísticas completos.
+### Claude Embebido
+Estas son extensiones de Claude para un software en específico como Excel o Chrome. Por ejemplo, [la extensión de Claude para Excel](https://claude.com/resources/use-cases/update-your-financial-model-after-earnings) puede ayudar a realizar un proceso de limpieza de datos, un análisis exploratorio o paneles (dashboard) de estadísticas completos.
 
 Mientras que la extensión para Chrome ayuda a interactuar con el navegador directamente: puede leer tu calendario y prepararte para reuniones, limpiar correos promocionales del inbox, extraer métricas de dashboards de analítica sin exportar nada, comparar productos entre pestañas abiertas, organizar archivos en Google Drive, o registrar llamadas de ventas en tu CRM.
 
-
-Por ejemplo, utilizando la extensión se puede realizar una exploración y/o investigación sobre un tema en especifico (que es una aplicación sugerible).
+Por ejemplo, utilizando la extensión se puede realizar una exploración e investigación sobre un tema específico (que es una aplicación recomendable).
 
 ![Extensión de Claude en Google Chrome](./extension_claude.png)
 
 ## 2. Claude Code
-En este punto pasas de ser un noob de los prompts a utilizar configuraciones donde puedes contornear de mejor forma el contexto de lo que quieres realizar, y ademas afinar los formatos de salida que requieres.
+En este punto pasas de ser un novato de los prompts a utilizar configuraciones donde puedes delimitar de mejor forma el contexto de lo que quieres realizar, y además afinar los formatos de salida que requieres.
 
 > "Por favor no es necesario que hagas un diplomado, con leer la documentación oficial es suficiente :)"
 
-Antes que nada debes tener en cuenta las [mejores prácticas](https://code.claude.com/docs/es/best-practices) para utilizar esta herramienta, pero antes es importante conocer el bucle agentico, el cual sigue los siguientes pasos:
+Antes que nada debes tener en cuenta las [mejores prácticas](https://code.claude.com/docs/es/best-practices) para utilizar esta herramienta, pero antes es importante conocer el bucle agéntico, el cual sigue los siguientes pasos:
 
 1. Tomar un contexto (archivos, prompts y conversaciones pasadas)
-2. Tomar un accion
-3. Verificar los Resultados
+2. Tomar una acción
+3. Verificar los resultados
 
-![Bucle Agentico](./agentic-loop.svg)
+![Bucle Agéntico](./agentic-loop.svg)
 
-Este bucle te permitira interrumpir la veces que quieras para guiar al modelo hacia otros contexto (otras ideas) de acuerdo a lo que estes buscando.
+Este bucle te permitirá interrumpir las veces que quieras para guiar al modelo hacia otros contextos (otras ideas) de acuerdo a lo que estés buscando.
 
-Con ello las mejores practicas y patrones a seguir tratar de mantener una ventana del contexto, puedes hacerte ayuda de los subagentes o mcp para este cometido.
+Con ello, las mejores prácticas y patrones a seguir es tratar de mantener una ventana de contexto acotada; puedes apoyarte en los subagentes o MCP para este cometido.
 
 <iframe style="border:none" width="100%" height="450" src="https://whimsical.com/embed/Fc8srTJQsux3R56o59Z7Wi"></iframe>
 
-Otra buena practica es definir muy bien la entrada y el formato de salida para reducir el uso de los tokens, y se que no es una regla general, pero en ningun caso debes darle acceso a credenciales, api keys, ws keys u otro acceso que se encuentre en producción (puedes usar variables de entorno o bien usar accesos en ambiente de prueba).
+Otra buena práctica es definir muy bien la entrada y el formato de salida para reducir el uso de tokens. Y aunque no es una regla general, en ningún caso debes darle acceso a credenciales, API keys, WS keys u otro acceso que se encuentre en producción (puedes usar variables de entorno o bien accesos en ambiente de prueba).
 
-Pero me extendi un poco de como usarlo, y en realidad la pregunta es cuando usarlo, y la verdad la respuesta es sencilla, cuando necesites crear un desarrollo mas elaborado.
+Pero me extendí un poco en el cómo usarlo, y en realidad la pregunta es cuándo usarlo. La respuesta es sencilla: cuando necesites crear un desarrollo más elaborado.
 
-Puedes usar la línea de terminal para escribir cientos de lineas de codigo, arquitecturas, patrones de diseno, estructuras de datos, y de una forma rapida.
- 
+Puedes usar la línea de terminal para escribir cientos de líneas de código, arquitecturas, patrones de diseño, estructuras de datos, y de una forma rápida.
+
 ### ¿Para qué usarlo?
 Cuando necesites crear un desarrollo más elaborado que una simple consulta en el chat. A diferencia de Claude (chat), aquí el modelo tiene acceso completo a tu proyecto y puede leer, crear y modificar archivos directamente. Algunos casos concretos:
 
@@ -105,7 +103,7 @@ Cuando necesites crear un desarrollo más elaborado que una simple consulta en e
 ## 3. Claude Cowork
 Cowork es la misma arquitectura de Claude Code, pero empaquetada en una interfaz gráfica dentro de la app de escritorio de Claude. Útil para personas sin conocimiento técnico necesario.
 
-Un caso rapido podria ser el ordenar los archivos de una carpeta, por ejemplo:
+Un caso rápido podría ser ordenar los archivos de una carpeta, por ejemplo:
 
 ![Carpeta Inicial](./cowork_1.png)
 
@@ -115,7 +113,7 @@ Un caso rapido podria ser el ordenar los archivos de una carpeta, por ejemplo:
 
 ![Resultado Final](./cowork_4.png)
 
-En el resultado final se observa que lo ordeno por extensión a cada uno de los archivo, y ademas los ha numerado.
+En el resultado final se observa que los ordenó por extensión y además los numeró.
 
 ### ¿Para qué usarlo?
 Para tareas que cruzan varias herramientas y archivos a la vez, sin necesidad de escribir código. Por ejemplo:
@@ -127,26 +125,19 @@ Para tareas que cruzan varias herramientas y archivos a la vez, sin necesidad de
 - **Investigación de mercado**: a partir de una pregunta, Claude investiga, calcula y genera un PowerPoint, un Excel con metodología y un documento con citas.
 - **Procesamiento de proveedores**: leer una carpeta de archivos de múltiples proveedores, agregarlos a un tracker, generar contratos y llenar formularios en el navegador en una sola sesión.
 
-## 4. OpenClaw (Bonus)
-Convierte un LLM en un agente autónomo que vive en tu computadora y se comunica contigo por Telegram, Discord o WhatsApp.
-
-### ¿Para qué usarlo?
-Para generar flujos de trabajo y ecosistemas entre varios agentes, uno investiga, otro escribe y otro revisa.
-
-
 ## Retroalimentación
 
-| | **Claude (chat)** | **Claude Code** | **Cowork** | **OpenClaw** |
-|---|---|---|---|---|
-| **Interfaz** | Web / móvil / desktop | Terminal / IDE | Desktop app (pestaña Cowork) | Terminal + mensajería (Telegram, Discord, WhatsApp) |
-| **Quién lo usa** | Todos | Desarrolladores | Profesionales no técnicos | Devs y power users |
-| **Modo de trabajo** | Conversacional, un mensaje a la vez | Agéntico: lee tu codebase, edita archivos, ejecuta comandos | Agéntico: accede a tus carpetas, coordina sub-agentes | Agéntico autónomo: ejecuta tareas en tu sistema con skills |
-| **Acceso a archivos** | Solo los que subes | Tu proyecto completo | Carpetas que autorices | Acceso al sistema (configurable) |
+| | **Claude (chat)** | **Claude Code** | **Cowork** |
+|---|---|---|---|
+| **Interfaz** | Web / móvil / desktop | Terminal / IDE | Desktop app (pestaña Cowork) |
+| **Quién lo usa** | Todos | Desarrolladores | Profesionales no técnicos |
+| **Modo de trabajo** | Conversacional, un mensaje a la vez | Agéntico: lee tu codebase, edita archivos, ejecuta comandos | Agéntico: accede a tus carpetas, coordina sub-agentes |
+| **Acceso a archivos** | Solo los que subes | Tu proyecto completo | Carpetas que autorices |
 
 <iframe style="border:none" width="100%" height="450" src="https://whimsical.com/embed/CZ945pa5Wij8LAdpsnn7Qd"></iframe>
 
 ## Recursos de Aprendizaje
-Ahora, existen herramientas gratuitas para aprender cualquiera de estas herramientas, y para ser honesto es preferible aprender en estas los propios cursos que emite Anthropic (empresa creadora de Claude), y puedes complementar ese conocimiento con habilidades compartidas en Reddit y con tu propia experimentación.
+Ahora, existen herramientas gratuitas para aprender cualquiera de estas herramientas, y para ser honesto es preferible aprender con los propios cursos que emite Anthropic (empresa creadora de Claude), y puedes complementar ese conocimiento con habilidades compartidas en Reddit y con tu propia experimentación.
 
 - [Anthropic Academy - Claude 101](https://anthropic.skilljar.com/claude-101)
 - [Anthropic Academy - Framework & Foundations](https://anthropic.skilljar.com/ai-fluency-framework-foundations)
@@ -155,5 +146,15 @@ Ahora, existen herramientas gratuitas para aprender cualquiera de estas herramie
 - [Docs OpenClaw - Personal Assistant Setup](https://docs.openclaw.ai/start/openclaw)
 
 ## Referencias
-- [Anthropic sues US over blacklisting; White House calls firm “radical left, woke”](https://arstechnica.com/tech-policy/2026/03/anthropic-sues-us-over-blacklisting-white-house-calls-firm-radical-left-woke/)
-Posdata: Este artículo fue investigado y escrito por un humano, y haciendo uso de un subagente para corregir errores gramaticales y de semántica.
+- [Why AI language models choke on too much text](https://arstechnica.com/ai/2024/12/why-ai-language-models-choke-on-too-much-text/) — Ars Technica
+- [Estocástico — Diccionario de la RAE](https://dle.rae.es/estoc%C3%A1stico) — RAE
+- [Anthropic sues US over blacklisting; White House calls firm "radical left, woke"](https://arstechnica.com/tech-policy/2026/03/anthropic-sues-us-over-blacklisting-white-house-calls-firm-radical-left-woke/) — Ars Technica
+- [Tweet sobre ChatGPT vs Claude](https://x.com/rubenhassid/status/2024871775574593798) — Ruben Hassid, X
+- [Modelos de Claude — Documentación oficial](https://platform.claude.com/docs/es/about-claude/models/overview) — Anthropic
+- [Mythos Preview](https://red.anthropic.com/2026/mythos-preview/) — Anthropic Research
+- [Anthropic's Claude Mythos AI and cyberattacks](https://www.cnbc.com/2026/04/07/anthropic-claude-mythos-ai-hackers-cyberattacks.html) — CNBC
+- [Casos de uso de Claude](https://claude.com/resources/use-cases) — Claude
+- [Actualizar tu modelo financiero con Claude para Excel](https://claude.com/resources/use-cases/update-your-financial-model-after-earnings) — Claude
+- [Mejores prácticas de Claude Code](https://code.claude.com/docs/es/best-practices) — Documentación Claude Code
+
+Posdata: Este artículo fue investigado y escrito por un humano, haciendo uso de un subagente para corregir errores gramaticales y de semántica.
