@@ -5,7 +5,7 @@ author: "David Castillo"
 pubDate: 2026-04-12
 tags: ["Claude","Claude Code","Claude Cowork","Anthropic","Peter Steimberger","educacion"]
 lang: "es"
-draft: true 
+draft: false
 ---
 
 > **tl;dr** Claude para una exploración rápida, Claude Code para codificación y generación de subagentes, y Claude Cowork para integrar herramientas de ofimática (hojas de cálculo y dashboards sencillos).
@@ -143,8 +143,6 @@ Ahora, existen herramientas gratuitas para aprender cualquiera de estas herramie
 - [Anthropic Academy - Framework & Foundations](https://anthropic.skilljar.com/ai-fluency-framework-foundations)
 - [Anthropic Academy - Introducción a los subagentes](https://anthropic.skilljar.com/introduction-to-subagents)
 - [Anthropic Academy - Introducción a Claude Cowork](https://anthropic.skilljar.com/introduction-to-claude-cowork)
-- [Docs OpenClaw - Personal Assistant Setup](https://docs.openclaw.ai/start/openclaw)
-
 ## Referencias
 - [Why AI language models choke on too much text](https://arstechnica.com/ai/2024/12/why-ai-language-models-choke-on-too-much-text/) — Ars Technica
 - [Estocástico — Diccionario de la RAE](https://dle.rae.es/estoc%C3%A1stico) — RAE
