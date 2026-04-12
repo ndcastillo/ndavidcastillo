@@ -25,11 +25,8 @@ Pero ¿qué nos ofrece Claude? Podemos simplificarlo así:
 2. Herramientas para personas técnicas.
 
 Pero dicha clasificación pierde interés y desaprovecha la potencialidad que tienen muchas de sus herramientas. Otra manera de clasificar los productos de Claude puede ser por sus [modelos de LLM](https://platform.claude.com/docs/es/about-claude/models/overview), como los actualmente desarrollados o en ambiente de calidad a día de hoy (abril del 2026):
-
 1. **Opus 4.6** — Su modelo más inteligente, orientado a la construcción de agentes y al uso en la codificación.
-
 2. **Sonnet 4.5** — Un modelo enfocado en la velocidad e inteligencia, ideal para tareas que requieren equilibrio entre rendimiento y latencia.
-
 3. **Haiku 4.5** — Su modelo más rápido con inteligencia casi de frontera, usado para aplicaciones que tienen un enfoque en la velocidad.
 
 Y también se debe mencionar a uno de sus modelos en tendencia —generada por los propios de Anthropic— llamado ["Mythos"](https://red.anthropic.com/2026/mythos-preview/), enfocado en identificar y explotar vulnerabilidades de seguridad en sistemas tan críticos como OpenBSD, FFmpeg, el kernel de Linux o navegadores web.
@@ -83,7 +80,7 @@ Este bucle te permitirá interrumpir las veces que quieras para guiar al modelo 
 
 Con ello, las mejores prácticas y patrones a seguir es tratar de mantener una ventana de contexto acotada; puedes apoyarte en los subagentes o MCP para este cometido.
 
-<iframe style="border:none" width="100%" height="450" src="https://whimsical.com/embed/Fc8srTJQsux3R56o59Z7Wi"></iframe>
+<iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/Fc8srTJQsux3R56o59Z7Wi"></iframe>
 
 Otra buena práctica es definir muy bien la entrada y el formato de salida para reducir el uso de tokens. Y aunque no es una regla general, en ningún caso debes darle acceso a credenciales, API keys, WS keys u otro acceso que se encuentre en producción (puedes usar variables de entorno o bien accesos en ambiente de prueba).
 
@@ -109,7 +106,7 @@ Un caso rápido podría ser ordenar los archivos de una carpeta, por ejemplo:
 
 ![Ejecución del prompt](./cowork_2.png)
 
-![Trabajo de Cowork](./cowork_3.gif)
+<img src="/assets/cowork_3.gif" alt="Trabajo de Cowork" />
 
 ![Resultado Final](./cowork_4.png)
 
@@ -133,8 +130,6 @@ Para tareas que cruzan varias herramientas y archivos a la vez, sin necesidad de
 | **Quién lo usa** | Todos | Desarrolladores | Profesionales no técnicos |
 | **Modo de trabajo** | Conversacional, un mensaje a la vez | Agéntico: lee tu codebase, edita archivos, ejecuta comandos | Agéntico: accede a tus carpetas, coordina sub-agentes |
 | **Acceso a archivos** | Solo los que subes | Tu proyecto completo | Carpetas que autorices |
-
-<iframe style="border:none" width="100%" height="450" src="https://whimsical.com/embed/CZ945pa5Wij8LAdpsnn7Qd"></iframe>
 
 ## Recursos de Aprendizaje
 Ahora, existen herramientas gratuitas para aprender cualquiera de estas herramientas, y para ser honesto es preferible aprender con los propios cursos que emite Anthropic (empresa creadora de Claude), y puedes complementar ese conocimiento con habilidades compartidas en Reddit y con tu propia experimentación.
