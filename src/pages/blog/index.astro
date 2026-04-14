@@ -83,6 +83,12 @@ const sortedYears = Object.keys(listYear).sort((a, b) => Number(b) - Number(a));
 				border-radius: 20px;
 				font-weight: 500;
 			}
+			h1 {
+				font-size: 2.5rem;
+				font-weight: 800;
+				margin-bottom: 2rem;
+				color: rgb(var(--black));
+			}
 			ul {
 				display: flex;
 				flex-direction: column;
@@ -220,7 +226,8 @@ const sortedYears = Object.keys(listYear).sort((a, b) => Number(b) - Number(a));
 	</head>
 	<body>
 		<Header />
-    <main>
+		<main>
+			<h1>Portafolio de Artículos</h1>
 			{sortedYears.map((year) => {
 				// Ordenar los meses de forma descendente (más reciente primero)
 				const sortedMonths = Object.keys(listYear[year]).sort((a, b) => Number(b) - Number(a));
