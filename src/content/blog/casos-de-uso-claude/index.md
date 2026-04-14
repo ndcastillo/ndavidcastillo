@@ -80,7 +80,7 @@ Este bucle puede interrumpirse las veces que quieras para guiar al modelo hacia 
 
 Con ello, las mejores prácticas y patrones a seguir es tratar de mantener una ventana de contexto acotada; puedes apoyarte en los subagentes o MCP para este cometido.
 
-<iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/Fc8srTJQsux3R56o59Z7Wi"></iframe>
+<iframe style="border:none" width="100%" height="450" src="https://whimsical.com/embed/Fc8srTJQsux3R56o59Z7Wi"></iframe>
 
 Otra buena práctica es definir muy bien la entrada y el formato de salida para reducir el uso de tokens. Y aunque no es una regla general, evita darle acceso directo a credenciales, API keys, WS keys u otros accesos de producción (puedes usar variables de entorno o bien accesos en ambiente de prueba).
 
