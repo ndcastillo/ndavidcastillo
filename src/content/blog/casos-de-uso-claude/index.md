@@ -3,12 +3,12 @@ title: "¿Cuándo usar las herramientas de Claude?"
 description: "Hoy en día existen un centenar de aplicaciones, y Claude ha sobresalido sobre todas ellas, pero ¿por qué?, hoy veremos los casos de uso en los cuales ha destacado."
 author: "David Castillo"
 pubDate: 2026-04-12
-tags: ["Claude","Claude Code","Claude Cowork","Anthropic","Peter Steimberger","educacion"]
+tags: ["Claude","Claude Code","Claude Cowork","Anthropic","Peter Steinberger","educacion"]
 lang: "es"
 draft: false
 ---
 
-> **tl;dr** Claude para una exploración rápida, Claude Code para codificación y generación de subagentes, y Claude Cowork para integrar herramientas de ofimática (hojas de cálculo y dashboards sencillos).
+> **tl;dr** Claude es ideal para una exploración rápida, Claude Code para codificación y generación de subagentes, y Claude Cowork para integrar herramientas de ofimática (hojas de cálculo y dashboards sencillos).
 
 **Manifiesto de ética**
 *Es importante mencionar que estas son herramientas de [LLM](https://arstechnica.com/ai/2024/12/why-ai-language-models-choke-on-too-much-text/), y se deben pensar siempre como una reconstrucción de colecciones de razonamientos aleatorios, o también pueden verse como una configuración de sistemas [estocásticos](https://dle.rae.es/estoc%C3%A1stico), las cuales pueden confluir en razonamientos muy bien estructurados o también pueden llegar a encontrarse con ruido que les llevará a respuestas erróneas y con alucinaciones (que no quedes como un alucín).*
@@ -76,13 +76,13 @@ Antes que nada debes tener en cuenta las [mejores prácticas](https://code.claud
 
 ![Bucle Agéntico](./agentic-loop.svg)
 
-Este bucle te permitirá interrumpir las veces que quieras para guiar al modelo hacia otros contextos (otras ideas) de acuerdo a lo que estés buscando.
+Este bucle puede interrumpirse las veces que quieras para guiar al modelo hacia otros contextos (otras ideas) de acuerdo a lo que estés buscando.
 
 Con ello, las mejores prácticas y patrones a seguir es tratar de mantener una ventana de contexto acotada; puedes apoyarte en los subagentes o MCP para este cometido.
 
 <iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/Fc8srTJQsux3R56o59Z7Wi"></iframe>
 
-Otra buena práctica es definir muy bien la entrada y el formato de salida para reducir el uso de tokens. Y aunque no es una regla general, en ningún caso debes darle acceso a credenciales, API keys, WS keys u otro acceso que se encuentre en producción (puedes usar variables de entorno o bien accesos en ambiente de prueba).
+Otra buena práctica es definir muy bien la entrada y el formato de salida para reducir el uso de tokens. Y aunque no es una regla general, evita darle acceso directo a credenciales, API keys, WS keys u otros accesos de producción (puedes usar variables de entorno o bien accesos en ambiente de prueba).
 
 Pero me extendí un poco en el cómo usarlo, y en realidad la pregunta es cuándo usarlo. La respuesta es sencilla: cuando necesites crear un desarrollo más elaborado.
 
@@ -138,6 +138,7 @@ Ahora, existen herramientas gratuitas para aprender cualquiera de estas herramie
 - [Anthropic Academy - Framework & Foundations](https://anthropic.skilljar.com/ai-fluency-framework-foundations)
 - [Anthropic Academy - Introducción a los subagentes](https://anthropic.skilljar.com/introduction-to-subagents)
 - [Anthropic Academy - Introducción a Claude Cowork](https://anthropic.skilljar.com/introduction-to-claude-cowork)
+
 ## Referencias
 - [Why AI language models choke on too much text](https://arstechnica.com/ai/2024/12/why-ai-language-models-choke-on-too-much-text/) — Ars Technica
 - [Estocástico — Diccionario de la RAE](https://dle.rae.es/estoc%C3%A1stico) — RAE

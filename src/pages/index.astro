@@ -35,12 +35,41 @@ const email = `mailto:${USER_EMAIL}`;
 		<BaseHead title={SITE_TITLE} description={SITE_HOME_DESCRIPTION} image={HomeOgImage} />
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": SITE_AUTHOR,
+			"url": SITE_URL,
+			"description": SITE_HOME_DESCRIPTION,
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": SITE_URL + "/search?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		})} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
 			"@type": "Person",
 			"name": SITE_AUTHOR,
 			"url": SITE_URL,
 			"description": SITE_HOME_DESCRIPTION,
 			"sameAs": [
-            redes["GITHUB"]
+				redes["GITHUB"],
+				redes["LINKEDIN"],
+				redes["X"]
+			]
+		})} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "SiteNavigationElement",
+					"name": "Posts",
+					"url": SITE_URL + "/blog"
+				},
+				{
+					"@type": "SiteNavigationElement",
+					"name": "Acerca de mi",
+					"url": SITE_URL + "/about"
+				}
 			]
 		})} />
 	</head>
@@ -62,7 +91,7 @@ const email = `mailto:${USER_EMAIL}`;
           <p class="role">Sitio Personal</p>
 
           <p class="description">
-			Bienvenido a mi espacio digital, donde comparto mis conocimientos y experiencias sobre el mundo de las tecnologias de la información y algo más. Encontrarás artículos, tutoriales y reflexiones sobre este apasionante campo.
+			Este es un espacio digital, donde comparto mis conocimientos y experiencias sobre el mundo de las tecnologias de la información y algo más. Aquí encontraras artículos, tutoriales y reflexiones de mi autoría.
 					</p>
 					<div class="contact">
             <a href={email} class="contact-link" title="Email">

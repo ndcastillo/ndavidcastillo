@@ -25,13 +25,13 @@ lang: "es"
 
 ## 1. De la conversación a la ejecución: ¿qué es realmente OpenClaw?
 
-OpenClaw es un agente de IA autónomo: un asistente personal que puede aprender, recordar y ejecutar tareas 24/7, los 365 días del año. Si creías que estabas en la vanguardia usando Claude, déjame decirte que estás atrapado en el 2024. El juego ya no es conversar, sino **delegar**.
+OpenClaw es un agente de IA autónomo: un asistente personal que puede aprender, recordar y ejecutar tareas 24/7, los 365 días del año. Si creías que estabas en la vanguardia usando Claude, déjame decirte que estás apenas rascando la superficie. El juego ya no es conversar, sino **delegar**.
 
 A diferencia de un chatbot que espera instrucciones, OpenClaw opera bajo una lógica de flujo continuo. Su creador unió la potencia de los modelos LLM con los clásicos cronjobs de los sistemas, obteniendo un producto con hype justificado.
 
 ## 2. El caso de uso más extendido: subagentes especializados
 
-Imagina desplegar agentes que funjan como un director creativo, un director comercial, un director de productos y un equipo de desarrolladores — y que se comuniquen entre sí. Ellos mismos crean flujos de trabajo enteros en herramientas como Notion, los optimizan según el contexto del día y entregan resultados sin que un humano intervenga en el proceso intermedio.
+Imagina desplegar agentes que actúen como un director creativo, un director comercial, un director de productos y un equipo de desarrolladores — y que se comuniquen entre sí. Ellos mismos crean flujos de trabajo enteros en herramientas como Notion, los optimizan según el contexto del día y entregan resultados sin que un humano intervenga en el proceso intermedio.
 
 Todo esto funcionando en tu red, sin mover un dedo.
 
