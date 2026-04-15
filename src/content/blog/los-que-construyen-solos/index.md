@@ -6,7 +6,7 @@ pubDate: 2026-04-14
 updatedDate: 2026-04-14
 tags: ["Indie Hackers", "Solopreneurs", "Entrepreneurship", "SaaS", "Videojuegos", "Startups"]
 lang: "es"
-draft: true
+draft: false
 ---
 
 No es suerte. No es solo presupuesto. No es talento caído del cielo.
