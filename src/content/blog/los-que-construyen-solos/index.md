@@ -29,7 +29,7 @@ Porque aquí está lo importante: los grandes estudios, los grandes equipos, los
 
 ## El precio que cobran
 
-[AJ (@ajlkn)](https://twitter.com/ajlkn) creó [Carrd](https://carrd.co/), un constructor de páginas web minimalista. Cero gasto en marketing. Cuatro millones de sitios alojados. Entre $1.5M y $2M de ingreso anual recurrente. Un solo desarrollador. Operando desde la sombra, dejando que el producto hable por sí solo.
+[AJ (@ajlkn)](https://twitter.com/ajlkn) creó [Carrd](https://carrd.co/), un constructor de páginas web minimalista. Cero gasto en marketing. Cuatro millones de sitios alojados. Entre `$1.5M` y `$2M` de ingreso anual recurrente. Un solo desarrollador. Operando desde la sombra, dejando que el producto hable por sí solo.
 
 Lo que muy pocas personas entienden es que esto requiere un sacrificio que no es convertible en dinero. Cuando construyes solo, cada línea de código es tuya. Cada decisión es tuya. No tienes a nadie más que culpar cuando algo falla. No tienes a nadie más que felicitar cuando algo funciona. Vives en una burbuja donde todo depende de ti.
 
