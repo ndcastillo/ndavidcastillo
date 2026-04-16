@@ -1,12 +1,12 @@
 ---
-title: "Los que construyen solos"
+title: "Los que construyen solos (Draft)"
 description: "Las historias de éxito de soloentrepreneurs e indie hackers que construyeron imperios digitales sin empleados, sin rondas de inversión y desde una laptop. Descubre qué hace que estos constructores solitarios logren lo que estudios de cientos de personas no pueden."
 author: "David Castillo"
 pubDate: 2026-04-14
 updatedDate: 2026-04-14
 tags: ["Indie Hackers", "Solopreneurs", "Entrepreneurship", "SaaS", "Videojuegos", "Startups"]
 lang: "es"
-draft: false
+draft: true
 ---
 
 No es suerte. No es solo presupuesto. No es talento caído del cielo.

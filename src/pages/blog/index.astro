@@ -108,10 +108,10 @@ const sortedYears = Object.keys(listYear).sort((a, b) => Number(b) - Number(a));
 				transition: all 0.3s ease;
 				padding: 1rem;
 				border-radius: 12px;
-				background: rgba(0, 0, 0, 0.01);
+				background: rgba(var(--gray-light), 0.1);
 			}
 			ul li a:hover {
-				background: rgba(0, 0, 0, 0.03);
+				background: rgba(var(--gray-light), 0.3);
 				transform: translateY(-2px);
 			}
 			.post-image {
