@@ -1,0 +1,19 @@
+# David Castillo
+
+> Sitio personal de David Castillo. Ingeniero en Electrónica y Telecomunicaciones. Blog con contenido sobre tecnología, desarrollo de software, inteligencia artificial e innovación.
+
+## Autor
+- Nombre: David Castillo
+- Rol: Ingeniero en Electrónica y Telecomunicaciones, Consultor en TICs, Analista de Desarrollo Web
+- Ubicación: Cuenca, Ecuador
+- Sitio web: https://davidcastillo.dev
+
+## Páginas principales
+- [Inicio](https://davidcastillo.dev/)
+- [Blog](https://davidcastillo.dev/blog)
+- [Acerca de mi](https://davidcastillo.dev/about)
+
+## Artículos del blog
+- [Los que construyen solos](https://davidcastillo.dev/blog/los-que-construyen-solos/): Las historias de éxito de soloentrepreneurs e indie hackers que construyeron imperios digitales sin empleados, sin rondas de inversión y desde una laptop.
+- [¿Cuándo usar las herramientas de Claude?](https://davidcastillo.dev/blog/casos-de-uso-claude/): Casos de uso de Claude, Claude Code y Claude Cowork. Cuándo usar cada herramienta y mejores prácticas.
+- [¿Qué ha pasado con OpenClaw? · Breve Estado del Arte](https://davidcastillo.dev/blog/estado-del-arte-openclaw/): Estado del arte de OpenClaw, NemoClaw, OpenAI y las implicaciones de seguridad en agentes autónomos.

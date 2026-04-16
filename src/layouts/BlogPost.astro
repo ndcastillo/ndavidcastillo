@@ -33,6 +33,9 @@ const postSlug = slug || Astro.url.pathname.split('/').filter(Boolean).pop();
 			"description": description,
 			"datePublished": pubDate.toISOString(),
 			...(updatedDate ? { "dateModified": updatedDate.toISOString() } : {}),
+			"inLanguage": "es",
+			...(tags ? { "keywords": tags.join(", ") } : {}),
+			...(body ? { "wordCount": body.split(/\s+/).length } : {}),
 			"author": {
 				"@type": "Person",
 				"name": SITE_AUTHOR,
@@ -45,7 +48,7 @@ const postSlug = slug || Astro.url.pathname.split('/').filter(Boolean).pop();
 			},
 			"mainEntityOfPage": {
 				"@type": "WebPage",
-				"@id": `${SITE_URL}/blog/${title.toLowerCase().replace(/\s+/g, '-')}/`
+				"@id": `${SITE_URL}/blog/${postSlug}/`
 			}
 		})} />
 		<style>
