@@ -11,7 +11,7 @@ draft: true
 
 No es suerte. No es solo presupuesto. No es talento caído del cielo.
 
-Hay algo en la manera en que piensan ciertos constructores que siempre fue diferente. Los [indie hackers](https://www.indiehackers.com/), los soloentrepreneurs, los que decidieron que no necesitaban permiso de nadie, que no necesitaban inversión, que no necesitaban un equipo. Decidieron necesitar solo una laptop y una idea obsesiva.
+Hay algo en la manera en que piensan ciertos constructores que siempre fue diferente. Los [indie hackers](https://www.indiehackers.com/), tambien llamados soloentrepreneurs, autonomos que no necesitaban inversión, que no necesitaban de un equipo y que decidieron necesitar solo de su laptop/computador y una idea obsesiva.
 
 La mayoría del mundo mira a los gigantes de la tecnología —los Googles, los Tesla, los Meta, los Microsoft—, ese es donde va la atención, ese es donde supuestamente ocurren las cosas realmente importantes. El problema es que esos gigantes construyen por comisión. Construyen lo que el mercado le dice que construya, lo que los accionistas quieren, lo que cabe en el siguiente trimestre financiero.
 
