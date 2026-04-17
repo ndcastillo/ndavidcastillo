@@ -17,7 +17,7 @@ draft: false
 
 Es muy probable que te encuentres atosigado por la gran cantidad de información sobre herramientas de IA, y la "infoxicación" en redes sociales puede llegar a confundirte y terminar gastando en una suscripción que nunca le darás uso.
 
-
+---
 <iframe
   width="100%"
   style="aspect-ratio: 9/16; max-width: 400px; display: block; margin: 0 auto;"
@@ -27,6 +27,8 @@ Es muy probable que te encuentres atosigado por la gran cantidad de información
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen>
 </iframe>
+
+---
 
 De entre toda esa nube de marketing de patito, nos podemos encontrar con joyas como Claude, que destaca por su filosofía, y [por oponerse al gobierno del señor naranja](https://arstechnica.com/tech-policy/2026/03/anthropic-sues-us-over-blacklisting-white-house-calls-firm-radical-left-woke/) en pro de la protección de la privacidad de sus clientes (válido solo para compradores americanos), y muy seguramente [ya no vuelvas a usar ChatGPT](https://x.com/rubenhassid/status/2024871775574593798).
 
