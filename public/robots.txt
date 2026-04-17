@@ -1,23 +1,50 @@
 User-agent: *
 Allow: /
 
-# AI Crawlers
+# OpenAI - GPT Models
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: PerplexityBot
+# Google - Gemini & LLMs
+User-agent: Google-Extended
 Allow: /
 
+# Anthropic - Claude Models
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Meta - LLaMA Training
+User-agent: FacebookBot
+Allow: /
+
+# Amazon - Q Models
 User-agent: Amazonbot
 Allow: /
 
-User-agent: anthropic-ai
+# ByteDance - ByteNLP
+User-agent: Bytespider
+Allow: /
+
+# Omgili - AI Training Dataset
+User-agent: Omgili
+Allow: /
+
+# Common Crawl - Used by multiple LLM projects
+User-agent: CCBot
+Allow: /
+
+# Microsoft - Copilot & AI
+User-agent: MicrosoftPreview
 Allow: /
 
 Sitemap: https://davidcastillo.dev/sitemap-index.xml
