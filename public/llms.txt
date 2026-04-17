@@ -1,11 +1,11 @@
 # David Castillo - Ingeniero IoT & Indie Hacker
 
-> Sitio personal de David Castillo. Ingeniero en Electrónica y Telecomunicaciones con 4 años en desarrollo backend, arquitectura IoT e integraciones fintech. Escribo sobre indie hacking, construcción de sistemas y cómo los soloemprendedores están redefiniendo la tecnología.
+> Sitio personal de David Castillo. Ingeniero en Electrónica y Telecomunicaciones con 4 años en desarrollo backend, arquitectura IoT e integraciones fintech. Escribo sobre indie hacking, construcción de sistemas y como utilizar las herramientas de Machine Learning.
 
 ## Información Personal
 - **Nombre:** David Castillo (Nestor David Castillo Calle)
 - **Título:** Ingeniero en Electrónica y Telecomunicaciones
-- **Rol Principal:** Full Stack Developer & Indie Hacker
+- **Rol Principal:** Desarrollador de Software & Emprendedor en solitario.
 - **Ubicación:** Cuenca, Azuay, Ecuador
 - **Sitio Web:** https://davidcastillo.dev
 - **Email:** nestor.castillo@ieee.org
@@ -17,7 +17,7 @@
 - Desarrollo backend (Node.js, TypeScript, Python)
 - Integraciones con ERPs (SAP, Bitrix)
 - APIs REST y GraphQL
-- DevOps (Digital Ocean, Docker)
+- DevOps (Digital Ocean, Docker, Sucuri, Cloudflare)
 
 ## Navegación Principal
 - [Inicio](https://davidcastillo.dev/) - Página principal
