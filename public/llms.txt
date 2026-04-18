@@ -1,19 +1,49 @@
-# David Castillo
+# David Castillo - Ingeniero IoT & Indie Hacker
 
-> Sitio personal de David Castillo. Ingeniero en Electrónica y Telecomunicaciones. Blog con contenido sobre tecnología, desarrollo de software, inteligencia artificial e innovación.
+> Sitio personal de David Castillo. Ingeniero en Electrónica y Telecomunicaciones con 4 años en desarrollo backend, arquitectura IoT e integraciones fintech. Escribo sobre indie hacking, construcción de sistemas y como utilizar las herramientas de Machine Learning.
 
-## Autor
-- Nombre: David Castillo
-- Rol: Ingeniero en Electrónica y Telecomunicaciones, Consultor en TICs, Analista de Desarrollo Web
-- Ubicación: Cuenca, Ecuador
-- Sitio web: https://davidcastillo.dev
+## Información Personal
+- **Nombre:** David Castillo (Nestor David Castillo Calle)
+- **Título:** Ingeniero en Electrónica y Telecomunicaciones
+- **Rol Principal:** Desarrollador de Software & Emprendedor en solitario.
+- **Ubicación:** Cuenca, Azuay, Ecuador
+- **Sitio Web:** https://davidcastillo.dev
+- **Email:** nestor.castillo@ieee.org
 
-## Páginas principales
-- [Inicio](https://davidcastillo.dev/)
-- [Blog](https://davidcastillo.dev/blog)
-- [Acerca de mi](https://davidcastillo.dev/about)
+## Especialidades Técnicas
+- Arquitectura de sistemas distribuidos
+- IoT & Sistemas embebidos
+- Integración de sistemas fintech (Stripe, pagos)
+- Desarrollo backend (Node.js, TypeScript, Python)
+- Integraciones con ERPs (SAP, Bitrix)
+- APIs REST y GraphQL
+- DevOps (Digital Ocean, Docker, Sucuri, Cloudflare)
 
-## Artículos del blog
-- [Los que construyen solos](https://davidcastillo.dev/blog/los-que-construyen-solos/): Las historias de éxito de soloentrepreneurs e indie hackers que construyeron imperios digitales sin empleados, sin rondas de inversión y desde una laptop.
-- [¿Cuándo usar las herramientas de Claude?](https://davidcastillo.dev/blog/casos-de-uso-claude/): Casos de uso de Claude, Claude Code y Claude Cowork. Cuándo usar cada herramienta y mejores prácticas.
-- [¿Qué ha pasado con OpenClaw? · Breve Estado del Arte](https://davidcastillo.dev/blog/estado-del-arte-openclaw/): Estado del arte de OpenClaw, NemoClaw, OpenAI y las implicaciones de seguridad en agentes autónomos.
+## Navegación Principal
+- [Inicio](https://davidcastillo.dev/) - Página principal
+- [Blog](https://davidcastillo.dev/blog) - Artículos sobre tecnología e indie hacking
+- [Acerca de mi](https://davidcastillo.dev/about) - Perfil profesional y experiencia
+
+## Proyectos Actuales
+- **Código Llamingo** (Fundador, Mayo 2025 - Presente): MicroSaaS enfocado en integraciones de pago y automatización de procesos para empresas latinoamericanas.
+
+## Publicaciones Destacadas del Blog
+
+### Indie Hacking & Soloemprendedores
+- **[Los que construyen solos](https://davidcastillo.dev/blog/los-que-construyen-solos/)** - Las historias de éxito de soloentrepreneurs e indie hackers que construyeron imperios digitales sin empleados, sin rondas de inversión y desde una laptop. Incluye análisis de Pieter Levels (Nomad List), Danny Postma (HeadshotPro), Eric Barone (Stardew Valley), Markus Persson (Minecraft), y cómo herramientas modernas (Claude Code, Cursor, Stripe, Apollo) democratizaron la construcción de startups.
+
+### IA & Herramientas de Desarrollo
+- **[¿Cuándo usar las herramientas de Claude?](https://davidcastillo.dev/blog/casos-de-uso-claude/)** - Casos de uso de Claude, Claude Code y Claude Cowork. Cuándo usar cada herramienta y mejores prácticas.
+
+### Estado del Arte Tecnológico
+- **[¿Qué ha pasado con OpenClaw? · Breve Estado del Arte](https://davidcastillo.dev/blog/estado-del-arte-openclaw/)** - Estado del arte de OpenClaw, NemoClaw, OpenAI y las implicaciones de seguridad en agentes autónomos.
+
+## Publicaciones Académicas
+- **"Telemetry System for Wind Turbines Case Study: University of Cuenca's Irquis Mini-Wind Farm"** - IEEE Ecuadorian Technical Chapters Meeting 2024 - 🏆 Mejor Paper Award (Communications Society)
+
+## Contacto & Colaboración
+- **Email:** nestor.castillo@ieee.org
+- **Para:** Proyectos IoT, fintech, mentorías indie hacking, o co-founder technical roles
+
+## Temas Clave
+tecnología, indie hacking, soloemprendedores, IoT, fintech, backend, Node.js, TypeScript, integraciones de sistemas, startups, desarrollo de software, arquitectura distribuida, sistemas embebidos, automatización
