@@ -31,7 +31,7 @@ Es muy probable que te encuentres atosigado por la gran cantidad de información
 
 ---
 
-De entre toda esa nube de marketing de patito, nos podemos encontrar con joyas como Claude, que destaca por su filosofía, y [por oponerse al gobierno del señor naranja](https://arstechnica.com/tech-policy/2026/03/anthropic-sues-us-over-blacklisting-white-house-calls-firm-radical-left-woke/) en pro de la protección de la privacidad de sus clientes (válido solo para compradores americanos), y muy seguramente [ya no vuelvas a usar ChatGPT](https://x.com/rubenhassid/status/2024871775574593798).
+De entre toda esa nube de marketing de patito, nos podemos encontrar con joyas como Claude, que destaca por su filosofía, y [por oponerse al gobierno del señor naranja](https://arstechnica.com/tech-policy/2026/03/anthropic-sues-us-over-blacklisting-white-house-calls-firm-radical-left-woke/) en pro de la protección de la privacidad de sus clientes (válido solo para estadounidenses), y muy seguramente [ya no vuelvas a usar ChatGPT](https://x.com/rubenhassid/status/2024871775574593798).
 
 Pero ¿qué nos ofrece Claude? Podemos simplificarlo así:
 
