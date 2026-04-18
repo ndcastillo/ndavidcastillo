@@ -47,7 +47,9 @@ const sortedYears = Object.keys(listYear).sort((a, b) => Number(b) - Number(a));
 		<BaseHead title="Blog - David Castillo" description="Artículos sobre tecnología, desarrollo de software, inteligencia artificial e innovación. Publicaciones, tutoriales y reflexiones por David Castillo." />
 		<style>
 			main {
-				width: 960px;
+				width: 100%;
+				max-width: 960px;
+				box-sizing: border-box;
 			}
 			.year-section {
 				margin-bottom: 4rem;
@@ -145,7 +147,6 @@ const sortedYears = Object.keys(listYear).sort((a, b) => Number(b) - Number(a));
 			
 			.no-image .post-data {
 				width: 100%;
-				padding: 1.5rem;
 			}
 			.post-title {
 				font-size: 1.5rem;
