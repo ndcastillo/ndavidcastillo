@@ -11,6 +11,7 @@ draft: false
 > **tl;dr** Claude es ideal para una exploración rápida, Claude Code para codificación y generación de subagentes, y Claude Cowork para integrar herramientas de ofimática (hojas de cálculo y dashboards sencillos).
 
 **Manifiesto de ética**
+
 *Es importante mencionar que estas son herramientas de [LLM](https://arstechnica.com/ai/2024/12/why-ai-language-models-choke-on-too-much-text/), y se deben pensar siempre como una reconstrucción de colecciones de razonamientos aleatorios, o también pueden verse como una configuración de sistemas [estocásticos](https://dle.rae.es/estoc%C3%A1stico), las cuales pueden confluir en razonamientos muy bien estructurados o también pueden llegar a encontrarse con ruido que les llevará a respuestas erróneas y con alucinaciones (que no quedes como un alucín).*
 
 *Por cuanto debes tener una responsabilidad perentoria en la revisión de cada una de sus afirmaciones, corroborando con fuentes de rigor (fuentes indexadas, estándares internacionales, etc).*
