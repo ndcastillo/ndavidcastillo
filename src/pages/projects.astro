@@ -1,0 +1,374 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const projects = [
+	{
+		name: 'Código Llamingo',
+		logo: '/Logo_codigollamingo.png',
+		url: 'https://codigollamingo.com',
+		role: 'Fundador',
+		period: 'may 2025 – Presente',
+		location: 'Cuenca, Ecuador',
+		summary: 'MicroSaaS enfocado en integraciones de pago, facturación y automatización de procesos para empresas latinoamericanas.',
+		description: 'Proyecto personal dedicado a generar integraciones y microSaaS enfocado en sistemas de pago, facturación electrónica y automatización de procesos para pymes en Latinoamérica. Construyo soluciones que conectan pasarelas de pago (Stripe, PayPhone), sistemas contables y ERPs para reducir la carga operativa de negocios en crecimiento.',
+		stack: ['Node.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Astro', 'Cloudflare'],
+		tags: ['MicroSaaS', 'Fintech', 'Automatización', 'Indie Hacking'],
+		status: 'Activo'
+	}
+];
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead
+			title="Proyectos - David Castillo"
+			description="Proyectos y productos construidos por David Castillo: integraciones fintech, microSaaS y herramientas de automatización."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Proyectos</h1>
+
+			<section class="intro">
+				<p>Espacio donde reúno los productos y proyectos en los que trabajo activamente. La mayoría nacen de la necesidad de resolver un problema real y terminan convirtiéndose en herramientas que otras personas o empresas también pueden usar.</p>
+			</section>
+
+			<section class="projects-list">
+				{projects.map((project) => (
+					<article class="project-card">
+						<header class="project-header">
+							{project.logo && (
+								<div class="project-logo">
+									<img
+										src={project.logo}
+										alt={`Logo ${project.name}`}
+										width="80"
+										height="80"
+										loading="lazy"
+									/>
+								</div>
+							)}
+							<div class="project-heading">
+								<div class="project-title-wrapper">
+									<h2 class="project-name">{project.name}</h2>
+									<span class="project-status">{project.status}</span>
+								</div>
+								<p class="project-summary">{project.summary}</p>
+							</div>
+						</header>
+
+						<div class="project-meta">
+							<span class="meta-item">
+								<strong>Rol:</strong> {project.role}
+							</span>
+							<span class="meta-item">
+								<strong>Periodo:</strong> {project.period}
+							</span>
+							<span class="meta-item">
+								<strong>Ubicación:</strong> {project.location}
+							</span>
+						</div>
+
+						<div class="project-body">
+							<p>{project.description}</p>
+						</div>
+
+						<div class="project-stack">
+							<h3>Stack</h3>
+							<ul>
+								{project.stack.map((tech) => (
+									<li>{tech}</li>
+								))}
+							</ul>
+						</div>
+
+						<div class="project-tags">
+							{project.tags.map((tag) => (
+								<span class="tag">#{tag}</span>
+							))}
+						</div>
+
+						<footer class="project-footer">
+							<a
+								href={project.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="project-link"
+							>
+								Visitar sitio
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M7 17L17 7"></path>
+									<path d="M7 7h10v10"></path>
+								</svg>
+							</a>
+						</footer>
+					</article>
+				))}
+			</section>
+
+			<section class="more-coming">
+				<p>Más proyectos en camino. Si te interesa colaborar o conocer más sobre alguno, <a href="/about">contáctame</a>.</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	main {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+		width: 100%;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.intro {
+		background: rgb(var(--gray-light));
+		padding: 2rem;
+		border-radius: 8px;
+		margin-bottom: 3rem;
+		font-size: 1.1rem;
+		line-height: 1.6;
+	}
+
+	.intro p {
+		margin: 0;
+	}
+
+	.projects-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+
+	.project-card {
+		background: var(--bg-surface);
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 12px;
+		padding: 2rem;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.project-card:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--box-shadow);
+	}
+
+	.project-header {
+		display: flex;
+		align-items: flex-start;
+		gap: 1.25rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.project-logo {
+		flex-shrink: 0;
+		width: 80px;
+		height: 80px;
+		border-radius: 12px;
+		overflow: hidden;
+		background: rgb(var(--gray-light));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.project-logo img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 12px;
+	}
+
+	.project-heading {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.project-title-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		margin-bottom: 0.5rem;
+	}
+
+	.project-name {
+		font-size: 1.75rem;
+		margin: 0;
+		color: rgb(var(--black));
+	}
+
+	.project-status {
+		font-size: 0.75rem;
+		padding: 0.25rem 0.6rem;
+		border-radius: 20px;
+		background: rgba(var(--accent), 0.15);
+		color: var(--accent);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.project-summary {
+		font-size: 1.05rem;
+		color: rgb(var(--gray-dark));
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	.project-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		padding: 1rem 0;
+		margin-bottom: 1rem;
+		border-top: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid rgb(var(--gray-light));
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+	}
+
+	.meta-item strong {
+		color: rgb(var(--gray-dark));
+		margin-right: 0.25rem;
+	}
+
+	.project-body {
+		margin-bottom: 1.5rem;
+	}
+
+	.project-body p {
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.6;
+		color: rgb(var(--gray-dark));
+	}
+
+	.project-stack {
+		margin-bottom: 1.5rem;
+	}
+
+	.project-stack h3 {
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: rgb(var(--gray));
+		margin: 0 0 0.75rem 0;
+	}
+
+	.project-stack ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.project-stack li {
+		padding: 0.35rem 0.75rem;
+		background: rgb(var(--gray-light));
+		border-radius: 4px;
+		font-size: 0.85rem;
+		color: rgb(var(--gray-dark));
+	}
+
+	.project-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.tag {
+		font-size: 0.8rem;
+		color: var(--accent);
+	}
+
+	.project-footer {
+		padding-top: 1rem;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+
+	.project-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: var(--accent);
+		text-decoration: none;
+		transition: gap 0.2s ease;
+	}
+
+	.project-link:hover {
+		gap: 0.6rem;
+		text-decoration: underline;
+		text-decoration-style: dashed;
+		text-underline-offset: 6px;
+	}
+
+	.more-coming {
+		text-align: center;
+		padding: 2rem 1rem;
+		color: rgb(var(--gray));
+		font-style: italic;
+	}
+
+	.more-coming p {
+		margin: 0;
+	}
+
+	@media (max-width: 720px) {
+		h1 {
+			font-size: 2rem;
+		}
+
+		.intro {
+			padding: 1.5rem;
+			font-size: 1rem;
+		}
+
+		.project-card {
+			padding: 1.25rem;
+		}
+
+		.project-header {
+			gap: 1rem;
+		}
+
+		.project-logo {
+			width: 60px;
+			height: 60px;
+		}
+
+		.project-name {
+			font-size: 1.4rem;
+		}
+
+		.project-summary {
+			font-size: 1rem;
+		}
+
+		.project-meta {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+	}
+</style>

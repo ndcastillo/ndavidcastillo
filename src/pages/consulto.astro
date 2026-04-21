@@ -1,0 +1,433 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import {
+	USER_EMAIL,
+	USER_PHONE,
+	USER_WHATSAPP_URL,
+	USER_LINKEDIN,
+	USER_GITHUB,
+	USER_TWITTER,
+	SITE_AUTHOR,
+} from '../consts';
+
+const services = [
+	{
+		title: 'Integraciones de Sistemas',
+		description: 'Conecto tus sistemas internos (CRM, ERP, e-commerce) con pasarelas de pago, APIs externas y servicios de terceros. Especialidad en SAP, Bitrix, Stripe y PayPhone.',
+		icon: 'plug'
+	},
+	{
+		title: 'Desarrollo Backend',
+		description: 'Construyo APIs robustas y middleware con Node.js, TypeScript y Python. Arquitecturas REST y GraphQL pensadas para escalar sin dolores de cabeza.',
+		icon: 'code'
+	},
+	{
+		title: 'IoT & Sistemas Distribuidos',
+		description: 'Diseño arquitecturas para dispositivos IoT y sistemas distribuidos. Desde prototipado hasta despliegue en producción con MQTT, microredes MESH y edge computing.',
+		icon: 'cpu'
+	},
+	{
+		title: 'Automatización de Procesos',
+		description: 'Transformo tareas repetitivas en flujos automatizados. Scripts, bots, integraciones y dashboards que te devuelven horas cada semana.',
+		icon: 'zap'
+	},
+	{
+		title: 'Infraestructura Cloud',
+		description: 'Administración de servidores en Digital Ocean, configuración de Cloudflare, Docker y pipelines de CI/CD. Te ayudo a mover tu stack a producción.',
+		icon: 'cloud'
+	},
+	{
+		title: 'Mentoría Indie Hacking',
+		description: 'Si estás construyendo un microSaaS o producto como solopreneur, te acompaño en decisiones técnicas, validación y primeros pasos del stack.',
+		icon: 'compass'
+	}
+];
+
+const linkedinUrl = `https://linkedin.com/in/${USER_LINKEDIN}`;
+const githubUrl = `https://github.com/${USER_GITHUB}`;
+const twitterUrl = `https://x.com/${USER_TWITTER}`;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead
+			title="Consultoría - David Castillo"
+			description="Consultoría en desarrollo de software, integraciones de sistemas, IoT, fintech y automatización de procesos. Conversemos sobre tu proyecto."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="hero">
+				<h1>Consultoría</h1>
+				<p class="lead">
+					¿Tienes un proyecto técnico y no sabes por dónde empezar? Te acompaño desde la definición hasta la implementación con experiencia en integraciones, IoT, fintech y automatización.
+				</p>
+			</section>
+
+			<section class="services">
+				<h2>Servicios</h2>
+				<div class="services-grid">
+					{services.map((service) => (
+						<div class="service-card">
+							<h3>{service.title}</h3>
+							<p>{service.description}</p>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section class="process">
+				<h2>¿Cómo trabajo?</h2>
+				<ol class="process-steps">
+					<li>
+						<strong>Conversación inicial</strong>
+						<p>Una llamada corta (gratis) para entender tu problema, contexto y objetivos. Sin compromiso.</p>
+					</li>
+					<li>
+						<strong>Propuesta</strong>
+						<p>Te envío una propuesta con alcance, tiempos, entregables y costos. Todo claro antes de empezar.</p>
+					</li>
+					<li>
+						<strong>Desarrollo</strong>
+						<p>Trabajo en ciclos cortos con demos semanales. Tú ves avances reales, no solo reportes.</p>
+					</li>
+					<li>
+						<strong>Entrega y soporte</strong>
+						<p>Entrego documentación, código y soporte post-entrega. Sin sorpresas.</p>
+					</li>
+				</ol>
+			</section>
+
+			<section class="contact" id="contacto">
+				<h2>Conversemos</h2>
+				<p class="contact-lead">
+					¿Listo para empezar o tienes dudas? Estos son mis canales de contacto directo.
+				</p>
+
+				<div class="contact-grid">
+					<a href={USER_WHATSAPP_URL} class="contact-card primary" target="_blank" rel="noopener noreferrer">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+						</svg>
+						<div>
+							<span class="contact-label">WhatsApp</span>
+							<span class="contact-value">{USER_PHONE}</span>
+						</div>
+					</a>
+
+					<a href={`mailto:${USER_EMAIL}`} class="contact-card">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<rect width="20" height="16" x="2" y="4" rx="2"/>
+							<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+						</svg>
+						<div>
+							<span class="contact-label">Email</span>
+							<span class="contact-value">{USER_EMAIL}</span>
+						</div>
+					</a>
+
+					<a href={linkedinUrl} class="contact-card" target="_blank" rel="noopener noreferrer">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+						</svg>
+						<div>
+							<span class="contact-label">LinkedIn</span>
+							<span class="contact-value">{SITE_AUTHOR}</span>
+						</div>
+					</a>
+
+					<a href={githubUrl} class="contact-card" target="_blank" rel="noopener noreferrer">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+						</svg>
+						<div>
+							<span class="contact-label">GitHub</span>
+							<span class="contact-value">@{USER_GITHUB}</span>
+						</div>
+					</a>
+
+					<a href={twitterUrl} class="contact-card" target="_blank" rel="noopener noreferrer">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+							<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+						</svg>
+						<div>
+							<span class="contact-label">X / Twitter</span>
+							<span class="contact-value">@{USER_TWITTER}</span>
+						</div>
+					</a>
+
+					<div class="contact-card location-card">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+							<circle cx="12" cy="10" r="3"/>
+						</svg>
+						<div>
+							<span class="contact-label">Ubicación</span>
+							<span class="contact-value">Cuenca, Ecuador</span>
+						</div>
+					</div>
+				</div>
+
+				<p class="availability">
+					<strong>Disponibilidad:</strong> Lunes a viernes · 9:00 – 18:00 (GMT-5)
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	main {
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+		width: 100%;
+	}
+
+	.hero {
+		text-align: center;
+		padding: 2rem 0 3rem;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.lead {
+		font-size: 1.15rem;
+		line-height: 1.6;
+		color: rgb(var(--gray-dark));
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+		margin-bottom: 1.5rem;
+		color: rgb(var(--black));
+		border-bottom: 2px solid rgb(var(--gray-light));
+		padding-bottom: 0.5rem;
+	}
+
+	.services {
+		margin-bottom: 3rem;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.25rem;
+	}
+
+	.service-card {
+		padding: 1.5rem;
+		background: var(--bg-surface);
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 10px;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.service-card:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--box-shadow);
+	}
+
+	.service-card h3 {
+		font-size: 1.15rem;
+		margin: 0 0 0.6rem 0;
+		color: rgb(var(--black));
+	}
+
+	.service-card p {
+		margin: 0;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		color: rgb(var(--gray-dark));
+	}
+
+	.process {
+		margin-bottom: 3rem;
+	}
+
+	.process-steps {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		counter-reset: step;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.process-steps li {
+		position: relative;
+		padding: 1.25rem 1.25rem 1.25rem 4rem;
+		background: rgb(var(--gray-light));
+		border-radius: 10px;
+		counter-increment: step;
+	}
+
+	.process-steps li::before {
+		content: counter(step);
+		position: absolute;
+		left: 1.25rem;
+		top: 1.25rem;
+		width: 2rem;
+		height: 2rem;
+		background: var(--accent);
+		color: var(--bg);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		font-size: 0.95rem;
+	}
+
+	.process-steps strong {
+		display: block;
+		font-size: 1.1rem;
+		margin-bottom: 0.3rem;
+		color: rgb(var(--black));
+	}
+
+	.process-steps p {
+		margin: 0;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		color: rgb(var(--gray-dark));
+	}
+
+	.contact {
+		margin-bottom: 2rem;
+	}
+
+	.contact-lead {
+		font-size: 1.05rem;
+		margin-bottom: 1.5rem;
+		color: rgb(var(--gray-dark));
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.contact-card {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1.25rem;
+		background: var(--bg-surface);
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 10px;
+		text-decoration: none;
+		color: rgb(var(--gray-dark));
+		transition: all 0.2s ease;
+	}
+
+	a.contact-card:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--box-shadow);
+		border-color: var(--accent);
+	}
+
+	.contact-card svg {
+		flex-shrink: 0;
+		color: var(--accent);
+	}
+
+	.contact-card.primary {
+		background: var(--accent);
+		border-color: var(--accent);
+		color: var(--bg);
+	}
+
+	.contact-card.primary svg {
+		color: var(--bg);
+	}
+
+	.contact-card.primary:hover {
+		opacity: 0.9;
+	}
+
+	.contact-card div {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	.contact-label {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		opacity: 0.7;
+		margin-bottom: 0.15rem;
+	}
+
+	.contact-value {
+		font-size: 1rem;
+		font-weight: 600;
+		word-break: break-word;
+	}
+
+	.location-card {
+		cursor: default;
+	}
+
+	.availability {
+		text-align: center;
+		padding: 1.25rem;
+		background: rgb(var(--gray-light));
+		border-radius: 10px;
+		margin: 0;
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 720px) {
+		h1 {
+			font-size: 2rem;
+		}
+
+		.lead {
+			font-size: 1rem;
+		}
+
+		h2 {
+			font-size: 1.4rem;
+		}
+
+		.hero {
+			padding: 1rem 0 2rem;
+		}
+
+		.services-grid,
+		.contact-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.process-steps li {
+			padding: 1rem 1rem 1rem 3.5rem;
+		}
+
+		.process-steps li::before {
+			left: 1rem;
+			top: 1rem;
+			width: 1.75rem;
+			height: 1.75rem;
+			font-size: 0.85rem;
+		}
+	}
+</style>

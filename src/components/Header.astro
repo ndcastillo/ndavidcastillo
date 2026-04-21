@@ -10,6 +10,16 @@ import SearchBar from './SearchBar.astro';
 		<div class="nav-right">
 
 
+			
+
+			
+			<div class="internal-links">
+				<!-- <HeaderLink href="/projects">Proyectos</HeaderLink> -->
+				<HeaderLink href="/blog">Posts</HeaderLink>
+				<!-- <HeaderLink href="/consulto">Consultoría</HeaderLink> -->
+				<HeaderLink href="/about">Acerca de mi</HeaderLink>
+			</div>
+
 			<button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
 				<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 					<circle cx="12" cy="12" r="5"></circle>
@@ -26,20 +36,14 @@ import SearchBar from './SearchBar.astro';
 					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
 				</svg>
 			</button>
-
 			
-			<div class="internal-links">
-				<HeaderLink href="/blog">Posts</HeaderLink>
-				<HeaderLink href="/about">Acerca de mi</HeaderLink>
-			</div>
-			
-			<SearchBar />
+			<!-- <SearchBar /> -->
 			
 		</div>
 		<!-- SearchBar para móvil (solo modal, sin botón) -->
-		<div class="mobile-search-modal">
+		<!-- <div class="mobile-search-modal">
 			<SearchBar />
-		</div>
+		</div> -->
 		<button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
 			<span class="hamburger-line"></span>
 			<span class="hamburger-line"></span>
@@ -48,10 +52,12 @@ import SearchBar from './SearchBar.astro';
 	</nav>
 	<div class="mobile-menu">
 		<div class="mobile-internal-links">
+			<HeaderLink href="/projects">Proyectos</HeaderLink>
 			<HeaderLink href="/blog">Posts</HeaderLink>
+			<!-- <HeaderLink href="/consulto">Consultoría</HeaderLink> -->
 			<HeaderLink href="/about">Acerca de mi</HeaderLink>
 		</div>
-		<button class="theme-toggle mobile-theme-toggle" aria-label="Cambiar tema">
+		<button style="fond-family:Source Serif 4" class="theme-toggle mobile-theme-toggle" aria-label="Cambiar tema">
 			<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 				<circle cx="12" cy="12" r="5"></circle>
 				<line x1="12" y1="1" x2="12" y2="3"></line>
@@ -68,7 +74,7 @@ import SearchBar from './SearchBar.astro';
 			</svg>
 			Cambiar tema
 		</button>
-		<div class="mobile-search">
+		<!-- <div class="mobile-search">
 			<button class="search-trigger" aria-label="Buscar artículos" title="Buscar">
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 					<circle cx="11" cy="11" r="8"></circle>
@@ -76,7 +82,7 @@ import SearchBar from './SearchBar.astro';
         </svg>
         Buscar Articulo
 			</button>
-		</div>
+		</div> -->
 	</div>
 </header>
 
