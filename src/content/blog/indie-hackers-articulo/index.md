@@ -11,6 +11,21 @@ draft: false
 
 > **tl;dr** Un indie hacker crea y testea productos digitales de forma acelerada, se autofinancia a sí mismo y tiene total independencia creativa. Pero detrás de la libertad hay burnout, ingresos inconsistentes y una probabilidad real de fracaso.
 
+
+---
+
+<iframe
+  width="100%"
+  style="aspect-ratio: 9/16; max-width: 400px; display: block; margin: 0 auto;"
+  src="https://www.youtube.com/embed/KQ3MnCnerw8"
+  title="OpenClaw - Estado del Arte"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+---
+
 Pieter Levels factura más de **\$3,000 USD/mes solo con Nomad List**, sin equipo, sin inversores, sin oficina. Se levanta en una ciudad distinta cada par de meses, lanza productos desde una laptop y publica sus números en X de manera abierta. Y no es el único: existe toda una comunidad que opera bajo esas reglas. Se llaman a sí mismos *indie hackers*, y son los verdaderos todólogos del mundo digital.
 
 Esta comunidad empezó a tener mucha relevancia hace poco más de una década. Uno de sus grandes exponentes es justamente Levels, que inspiró a muchos con su libro ["12 startups in 12 months"](https://levels.io/12-startups-12-months/), publicado en 2014, en una época donde no existía el "vibe coding" ni LLMs que generaran código en segundos. Y se pueden encontrar ciertos patrones: la mayoría son personas de entre 20 y 30 años, generalmente marcadas por ser [nómadas digitales](https://www.indiehackers.com/post/2025-relocation-guide-for-indie-hackers-QQlxEe2sKTbV0vRLzAmQ) que cada cierto tiempo viven en una nueva ciudad o país.
