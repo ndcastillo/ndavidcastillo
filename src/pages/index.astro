@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -133,14 +134,30 @@ const email = `mailto:${USER_EMAIL}`;
 				<h2>Últimos Posts</h2>
 				<ul>
 					{posts.map((post) => (
-						<li>
+						<li class={post.data.heroImage ? 'has-image' : 'no-image'}>
 							<a href={`/blog/${post.id}/`}>
-								<span class="post-title">{post.data.title}</span>
-								<span class="post-date">
-									<FormattedDate date={post.data.pubDate} /> · {post.readingTime}
-								</span>
+								{post.data.heroImage && (
+									<div class="post-thumb">
+										<Image
+											width={480}
+											height={300}
+											densities={[1, 1.5, 2]}
+											quality={90}
+											src={post.data.heroImage}
+											alt={post.data.title}
+										/>
+									</div>
+								)}
+								<div class="post-body">
+									<div class="post-head">
+										<span class="post-title">{post.data.title}</span>
+										<span class="post-date">
+											<FormattedDate date={post.data.pubDate} /> · {post.readingTime}
+										</span>
+									</div>
+									<p class="post-description">{post.data.description}</p>
+								</div>
 							</a>
-							<p class="post-description">{post.data.description}</p>
 						</li>
 					))}
 				</ul>
@@ -242,8 +259,8 @@ const email = `mailto:${USER_EMAIL}`;
 	}
 	.recent-posts a {
 		display: flex;
-		justify-content: space-between;
-		align-items: baseline;
+		flex-direction: row;
+		align-items: flex-start;
 		gap: 1rem;
 		text-decoration: none;
 	}
@@ -251,6 +268,32 @@ const email = `mailto:${USER_EMAIL}`;
 		text-decoration: underline;
 		text-decoration-style: dashed;
 		text-underline-offset: 5px;
+	}
+	.post-thumb {
+		flex-shrink: 0;
+		width: 120px;
+		height: 75px;
+		overflow: hidden;
+		border-radius: 6px;
+	}
+	.post-thumb img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+	.recent-posts a:hover .post-thumb img {
+		transform: scale(1.05);
+	}
+	.post-body {
+		flex: 1;
+		min-width: 0;
+	}
+	.post-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 1rem;
 	}
 	.post-title {
 		flex: 1;
@@ -263,7 +306,6 @@ const email = `mailto:${USER_EMAIL}`;
 	.post-description {
 		margin: 0.3rem 0 0 0;
 		font-size: 0.85em;
-		color: rgb(var(--gray));
 	}
 
 	/* ── RESPONSIVE ── */
@@ -280,6 +322,14 @@ const email = `mailto:${USER_EMAIL}`;
 			justify-content: center;
 		}
 		.recent-posts a {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+		.post-thumb {
+			width: 100%;
+			height: 160px;
+		}
+		.post-head {
 			flex-direction: column;
 			gap: 0.2rem;
 		}
