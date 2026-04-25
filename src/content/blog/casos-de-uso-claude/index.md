@@ -3,6 +3,7 @@ title: "¿Cuándo usar las herramientas de Claude?"
 description: "Hoy en día existen un centenar de aplicaciones, y Claude ha sobresalido sobre todas ellas, pero ¿por qué?, hoy veremos los casos de uso en los cuales ha destacado."
 author: "David Castillo"
 pubDate: 2026-04-12
+heroImage: "./claude-cases-cover2.png"
 tags: ["Claude","Claude Code","Claude Cowork","Anthropic"]
 lang: "es"
 draft: false
