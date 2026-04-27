@@ -6,12 +6,14 @@ import { defineConfig } from 'astro/config';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://davidcastillo.dev',
-	integrations: [mdx(), sitemap()],
-	markdown: {
-		remarkPlugins: [remarkMath],
-		rehypePlugins: [rehypeKatex],
-	},
+    site: 'https://davidcastillo.dev',
+    integrations: [mdx(), sitemap(), react()],
+    markdown: {
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+    },
 });
