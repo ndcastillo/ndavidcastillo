@@ -200,6 +200,10 @@ Por ende, se empezó a utilizar funciones de activación no lineales, como la si
 
 ReLU domina porque es barata de calcular y mitiga el problema del *vanishing gradient*.
 
+Ahora ponte a pensar cuantas capas, pesos y clases usaran los modelos mas actuales, y dentro de cada capa, cuántos perceptrones habrá. La cantidad de parámetros que se ajustan en un modelo como GPT-4 es del orden de los billones, lo que significa que hay billones de perceptrones trabajando juntos para generar texto coherente.
+
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@welchlabs/video/7530426776607067447" data-video-id="7530426776607067447" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@welchlabs" href="https://www.tiktok.com/@welchlabs?refer=embed">@welchlabs</a> <p>The Perceptron, Part 3.</p> <a target="_blank" title="♬ original sound - Welch Labs" href="https://www.tiktok.com/music/original-sound-7530426876741847821?refer=embed">♬ original sound - Welch Labs</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+
 ## Backpropagation: cómo aprenden las redes profundas
 
 El truco que destrabó todo en los 80 (Rumelhart, Hinton y Williams, 1986) fue **backpropagation**: una forma eficiente de calcular cómo cada peso de la red contribuye al error final, usando la **regla de la cadena** del cálculo diferencial.
