@@ -100,14 +100,7 @@ La etapa de **validación del PMV** es la parte más importante: ahí se decide 
 
 En la práctica, la primera meta suele ser conseguir 100 usuarios y un MRR de entre **\$0 – \$500/mes** que justifique el esfuerzo posterior.
 
-| Etapa        | Usuarios   | MRR aproximado       |
-| ------------ | ---------- | -------------------- |
-| Validación   | ~100       | \$0 – \$500/mes      |
-| PMF          | ~1,000     | \$500 – \$2K/mes     |
-| Growth       | ~10,000    | \$2K – \$50K/mes     |
-| Scale        | 100K+      | \$50K – \$500K+/mes  |
-
-La escala en la cultura indie hacker consiste en **mantener un producto rentable** y, si es posible, venderlo a una empresa más grande. Existen casos en que un producto escala a niveles de unicornio, pero en la gran mayoría la idea es primero capitalizar la idea como tal — no perseguir un IPO.
+La escala en la cultura indie hacker consiste en **mantener un producto rentable** y, si es posible, venderlo a una empresa más grande. Existen casos en que un producto escala a niveles de unicornio, y pasan a ser una startup, pero en la gran mayoría la idea es primero capitalizar la idea como tal — no perseguir un IPO.
 
 ## Una realidad que hay que contar
 
