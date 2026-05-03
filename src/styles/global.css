@@ -215,11 +215,15 @@ code {
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
-	overflow-x: auto;
+	overflow-x: hidden;
 	max-width: 100%;
+	white-space: pre-wrap;
 }
 pre > code {
 	all: unset;
+	white-space: inherit;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 blockquote {
 	border-left: 4px solid var(--accent);
@@ -271,4 +275,3 @@ button{
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
-
