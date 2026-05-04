@@ -92,7 +92,7 @@ Como puedes observar en la variable `text` es donde se coloca el texto que quier
 
 Ahora como sabras el audio de un video es muy espontaneo, es decir contiene pausas, acentos, y recursos del lenguaje que al utilizar en el script anterior se obtendria una voz demasiada artificial y que exista un desfase con las imagenes del video.
 
-En este caso podemos hacernos de la ayuda de los arhcivos `.str` o `.json` (de subtitulos), en este formato se guardara el texto que se dice en un audio, puedes usar las herramientas de tu editor de video favorito ya sea capcut, final cut, adobe premiere o davinci resolve. En mi caso usare una herramienta de licencia libre como lo es [Autosubs](https://tom-moroney.com/auto-subs/) para obtener el archivo `.str` pero para tener mayor precisión y evitar el desfase, usare el archivo `.json`.
+En este caso podemos hacernos de la ayuda de los arhcivos `.str` o `.json` (de subtitulos), en este formato se guardara el texto que se dice en un audio, puedes usar las herramientas de tu editor de video favorito ya sea capcut, final cut, adobe premiere o davinci resolve. En mi caso usaré una herramienta de licencia libre como lo es [Autosubs](https://tom-moroney.com/auto-subs/) para obtener el archivo `.str` pero para tener mayor precisión y evitar el desfase, se podria usar un archivo `.json`.
 
 Este nos proveera los siguiente:
 1. El guión del video
@@ -128,7 +128,7 @@ Si observas el `.json`, se puede rescatar lo siguiente:
 4. La probabilidad de posición temporal.
 5. El locutor `line_number`, como solo es 1 (para este caso) aparece en 0.
 
-Con esta información podemos crear un script que mantenga una fase de acuerdo a los tiempos establecidos, y de esta manera fasas el audio de la pista del doblaje. Pero antes de pasar a generar el script, lo que desearia es que esta transcripcion realizada en español sea en ingles, para este caso podemos usar Claude Code, Codex, Gemini o cualquier LLM, obteniendo un guion como el siguiente:
+Con esta información podemos crear un script que mantenga una fase de acuerdo a los tiempos establecidos, y de esta manera fasas el audio de la pista del doblaje. Pero antes de pasar a generar el script, tenemos que recordar que lo que quiere hacer es un doblaje a otro idioma con el mismo timbre de voz, para este caso de español a ingles, podemos usar Claude Code, Codex, Gemini o cualquier otro LLM para este proposito:
 
 ```json
 {
@@ -154,13 +154,18 @@ Con esta información podemos crear un script que mantenga una fase de acuerdo a
 
 Para lograr dejar en fase tanto el doblaje como las imagenes deberemos crear un script de python que realice lo siguiente:
 
-1. 
+1. Leer el archivo `.json` o `.str` para formar rangos de tiempos con los segmentos de las palabras
+2. Generar la clonación de voz de cada segmento y obtener el archivo `.wav`
 
+Por lo que por cada segmento podremos obtener un numero X de archivos `.wav` que podremos utilzar en un editor de video para colar de acuerdo al locutor. El archivo anteriormente usado no nos funcionara para este caso, y deberemos modificarlo de la siguiente manera:
+
+
+## Recomendaciones y mejoras
 
 
 ## Ideas de comercialización
 
-Como observas el modelo que acabamos de realizar ya es un producto miniamente viable (MVP) en potencia, con ciertos ajustos y despliegue se puede generar una _lista de espera_ con una prueba gratuita para saber cuanto la gente esta dispuesta a pagar para doblar sus videos a otros idiomas utilizando una IA de clonación de voz. 
+Como observas el modelo que acabamos de realizar ya es un producto miniamente viable (MVP) en potencia, con ciertos ajustos y despliegue se puede generar una _lista de espera_ con una prueba gratuita para saber cuanto la gente esta dispuesta a pagar para doblar sus videos a otros idiomas utilizando una IA de clonación de voz.
 
-Aunque para ser sinceros el nicho de mercado en el cuál puede funcionar esto es dentro de los editores de video y creadores de contenido. Un producto final puede ser un plugin para software de edición de video y/o una web de doblaje de audio a otros idiomas como lo hace [elevenlabs](https://elevenlabs.io/).
+Aunque para ser sinceros el nicho de mercado en el cuál puede funcionar esto es dentro de los editores de video y creadores de contenido. Un producto final puede ser un plugin para software de edición de video como davinci resolve, adobe premiere y final cut pro, donde para un audio de cualquier pista realice 1. la transcripción de audio a texto, 2. la traducción al idioma a doblar y por ultimo 3. la clonación de voz para el doblaje, tambien puede funcionar como una aplicación web de doblaje de audios en crudo para obtener su contraparte en otros idiomas con su mismo timbre de voz como lo hace [elevenlabs](https://elevenlabs.io/).
 
