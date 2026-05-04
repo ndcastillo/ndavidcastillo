@@ -5,7 +5,7 @@ author: "David Castillo"
 pubDate: 2026-05-03
 tags: ["Elevenlabs", "Chatterbox", "Youtube", "Clonación de voz", "Doblaje de audio", "Davinci Resolve"]
 lang: "es"
-draft: true
+draft: false
 ---
 
 >tl;dr 
@@ -41,7 +41,7 @@ cd chatterbox
 pip install -e .
 ```
 
-**PASO 4:** Para ya empezar a utilizarlo y en su versión mas moderna de `Turbo` crear un archivo `clon-voice.py` en la carperta de `chatterbox`, aqui debes tener preparado un archivo de tu voz de minimo de 30 segundos llamado `voice-reference.wav`, y un obtendras de salida un archivo `test-turbo.wav` con clonada.
+**PASO 4:** Para ya empezar a utilizarlo y en su versión mas moderna llamada **Turbo**, se necesita crear un archivo que en este caso sera llamado`clon-voice.py` y dentro de la carperta de `chatterbox`, aqui debes tener preparado un archivo de tu voz con un minimo de 10 segundos llamado `voice-reference.wav`, y un obtendrás de salida un archivo `test-turbo.wav` con clonada.
 
 ```python
 import torchaudio as ta
@@ -60,7 +60,7 @@ wav = model.generate(text, audio_prompt_path="voice-reference.wav")
 ta.save("output-voice.wav", wav, model.sr)
 ```
 
-Voz de referencia:
+**Voz de referencia:**
 
 <audio controls preload="metadata" style="width: 100%;">
     <source src="/assets/audio/voice-reference.wav" type="audio/mpeg" />
@@ -79,18 +79,18 @@ Como puedes observar en la variable `text` es donde se coloca el texto que quier
 >Shayne Coplan was 22 years old when he founded Polymarket alone in 2020. Programming from the bathroom of his apartment in New York. Without a penny. Selling his things to pay the rent.
 
 
-Voz Clonada en otro idioma
+**Voz Clonada en Ingles**
 
 <audio controls preload="metadata" style="width: 100%;">
     <source src="/assets/audio/output-voice.wav" type="audio/mpeg" />
     Tu navegador no soporta el reproductor de audio.
   </audio>
 
-
+---
 
 ## Uso de archivos `.str` o `.json`
 
-Ahora como sabras el audio de un video es muy espontaneo, es decir contiene pausas, acentos, y recursos del lenguaje que utilizar el script anterior se obtenga una voz demasiada artificial y que exista un desfase con las imagenes del video.
+Ahora como sabras el audio de un video es muy espontaneo, es decir contiene pausas, acentos, y recursos del lenguaje que al utilizar en el script anterior se obtendria una voz demasiada artificial y que exista un desfase con las imagenes del video.
 
 En este caso podemos hacernos de la ayuda de los arhcivos `.str` o `.json` (de subtitulos), en este formato se guardara el texto que se dice en un audio, puedes usar las herramientas de tu editor de video favorito ya sea capcut, final cut, adobe premiere o davinci resolve. En mi caso usare una herramienta de licencia libre como lo es [Autosubs](https://tom-moroney.com/auto-subs/) para obtener el archivo `.str` pero para tener mayor precisión y evitar el desfase, usare el archivo `.json`.
 
@@ -108,7 +108,7 @@ Estos archivos tambien pueden traer el locutor del guión, y puedes generar una 
       "id": "0",
       "start": 0.04,
       "end": 6.01,
-      "text": "Hay un tipo que en 2014 se abrió una laptop en un café de taillandia y construyó \"Nomad Liz\".",
+      "text": "Hay un tipo que en 2014 se abrió una laptop en un café de taillandia y construyó \"Nomad List\".",
       "words": [
         {
           "word": "Hay",
@@ -117,7 +117,7 @@ Estos archivos tambien pueden traer el locutor del guión, y puedes generar una 
           "probability": 0.8284269,
           "line_number": 0
         },
-....
+...
 ```
 
 Si observas el `.json`, se puede rescatar lo siguiente:
@@ -128,9 +128,33 @@ Si observas el `.json`, se puede rescatar lo siguiente:
 4. La probabilidad de posición temporal.
 5. El locutor `line_number`, como solo es 1 (para este caso) aparece en 0.
 
-Con esta información podemos crear un script que mantenga un fase de acuerdo a los tiempos establecidos, y de esta manera fasas el audio de la pista del doblaje.
+Con esta información podemos crear un script que mantenga una fase de acuerdo a los tiempos establecidos, y de esta manera fasas el audio de la pista del doblaje. Pero antes de pasar a generar el script, lo que desearia es que esta transcripcion realizada en español sea en ingles, para este caso podemos usar Claude Code, Codex, Gemini o cualquier LLM, obteniendo un guion como el siguiente:
+
+```json
+{
+  "createdAt": "2026-05-03T16:55:52.540Z",
+  "segments": [
+    {
+      "id": "0",
+      "start": 0.04,
+      "end": 6.01,
+      "text": "There a guy who in 2014 opened a laptop in a cafe from Thailand and built \"Nomad Liz\".",
+      "words": [
+        {
+          "word": "There",
+          "start": 0.04,
+          "end": 0.2,
+          "probability": 0.8284269,
+          "line_number": 0
+        },
+...
+```
 
 ## Fase del doblaje
+
+Para lograr dejar en fase tanto el doblaje como las imagenes deberemos crear un script de python que realice lo siguiente:
+
+1. 
 
 
 
