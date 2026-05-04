@@ -5,7 +5,7 @@ author: "David Castillo"
 pubDate: 2026-05-03
 tags: ["Elevenlabs", "Chatterbox", "Youtube", "Clonación de voz", "Doblaje de audio", "Davinci Resolve"]
 lang: "es"
-draft: false
+draft: true
 ---
 
 >tl;dr 
