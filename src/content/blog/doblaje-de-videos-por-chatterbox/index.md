@@ -160,7 +160,8 @@ Para lograr dejar en fase tanto el doblaje como las imagenes deberemos crear un 
 Por lo que por cada segmento podremos obtener un numero X de archivos `.wav` que podremos utilzar en un editor de video para colar de acuerdo al locutor. El archivo anteriormente usado no nos funcionara para este caso, y deberemos modificarlo de la siguiente manera:
 
 
-## Recomendaciones y mejoras
+## Lenguajes, acentos y particularidades de agrupación
+Por la propia estructura y formación de cada idioma, un lenguaje se puede tardar en decir una misma frase en mas o menos tiempo que en otro lenguaje, por lo que dependera de las ideas que se transmite en un video y la "calibración" del guión para encajar a la perfección. 
 
 
 ## Ideas de comercialización
