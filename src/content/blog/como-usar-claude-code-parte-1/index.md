@@ -28,21 +28,7 @@ Sea cual sea lo que desees hacer debes dar permisos para usar esa carpeta, media
 
 Cuando usas Claude Code, cada turno consume tokens en dos fases: **entrada** (lo que el modelo recibe) y **salida** (lo que el modelo genera). Entender esto te ayuda a bajar costo, latencia y ruido.
 
-```text
-Tu prompt + contexto del repo + historial + salidas de tools
-                         │
-                         ▼
-                [ Input tokens ]
-                         │
-                         ▼
-                    Modelo LLM
-                         │
-                         ▼
-Texto final + llamadas a tools + parametros generados
-                         │
-                         ▼
-                [ Output tokens ]
-```
+
 
 | Tipo | Que incluye en Claude Code | Impacto |
 |---|---|---|
