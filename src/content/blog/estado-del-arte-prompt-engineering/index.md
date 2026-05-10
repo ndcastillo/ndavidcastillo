@@ -1,6 +1,6 @@
 ---
 title: "Estado del arte del Prompt Engineering: técnicas para trabajar mejor con modelos de IA"
-description: "Una guía práctica sobre las técnicas modernas de prompt engineering: contexto, ejemplos, roles, salida estructurada, razonamiento, evaluación, agentes y buenas prácticas para reducir errores."
+description: "Una guía práctica sobre las técnicas modernas de prompt engineering: contexto, ejemplos, roles, salida estructurada, razonamiento, evaluación, agentes y buenas prácticas para reducir errores y ahorrar tokens."
 author: "David Castillo"
 pubDate: 2026-05-09
 tags: ["IA", "Prompt Engineering", "LLM", "Productividad", "Agentes"]
@@ -12,7 +12,9 @@ draft: true
 
 ---
 
-## 1. ¿Qué es realmente el prompt engineering?
+Ok, partamos que con que todo el mundo ya utiliza los productos de los grandes modelos de IA generativa como Gemini, Chat GPT, Claude, DeepSeek, y otros; Pero como te habras dado cuenta tienen un costo por tokens, y con el tiempo se te termina gastando y debes esperar un tiempo para que se recarguen en tu cuenta. Por lo que te frustara si te encuentras en tu estado de foco. Por ello en este post desplegare tecnicas para mejorar y optimizar el uso de tus tokens a travez del _prompt engineering_ y que no solo ahorres tokens sino que tengas una comunicación _profesional_ con el prompter.
+
+## ¿Qué es realmente el prompt engineering?
 
 Prompt engineering es la práctica de diseñar instrucciones para que un modelo de lenguaje produzca resultados útiles, consistentes y verificables. La definición suena sencilla, pero en la práctica cambia mucho dependiendo de si estás usando un chatbot, una API, un modelo de razonamiento, un agente con herramientas o un flujo automatizado dentro de una aplicación.
 
@@ -26,7 +28,119 @@ Un prompt más útil delimita el trabajo:
 
 > Resume este documento para un gerente de producto. Extrae decisiones, riesgos, fechas y responsables. Devuelve una tabla con cuatro columnas: tema, evidencia, impacto y siguiente acción. Si un dato no aparece en el documento, escribe "No especificado".
 
-La diferencia no es cosmética. Es la diferencia entre pedir una opinión y diseñar una operación repetible.
+Aqui puedes ver la diferencia entre pedir una opinión y diseñar una operación repetible.
+
+## ¿Que técnicas de prompt engineering existen?
+
+Existen muchas, pero se puede resumir en 4 clasificaciones:
+
+1. Marcos de estructura
+2. Técnicas de Razonamiento
+3. Técnicas de Contexto
+4. Técnicas de Fiabilidad
+
+Cada una de ellas se pueden aplicar dependiendo de la tarea que se vaya a realizar y el modelo de LLM que se utilice, ya que un prompt que funcione en "Gemini" talvez no tenga la misma respuesta en una que se use en "Chat GPT".
+
+### 1. Marcos de estructura
+
+Los marcos de estructura son un conjunto de instrucciones para escribir un prompt, y ayuda que el agente de IA comprenda lo que esta buscando el usuario, entre las mas usadas se encuentran la RTF, CO-STAR, PAPA y CRISPE, que son tecnicas creadas por la comunidad prompter y han sido divulgadas fuertemente en las [_Prompt Battles_](https://promptbattle.com/). Aunque tambien podrias utilizar un [generador de prompts](https://www.jotform.com/es/ai/prompt-generator/) didactico seleccionando la plataforma y el modelo antes de crear el prompt, y ahorrarte tiempo 
+
+![Generador de Prompts](./generador-de-prompts.png)
+
+#### RTF: Role + Task + Format
+
+Esta [estructura de prompting define](https://www.rtfprompt.com/framework.php) lo siguiente:
+
+- Un **rol**, Por ejemplo: 
+>_Actua como un abogado especialista en derecho laboral_
+- Una **tarea**, Por ejemplo:
+>_Revisa el contrato de trabajo, analiza las clausulas de proteccion de la empresa, riesgos laborales y beneficios que falten._
+- Un **formato** entregable, Por ejemplo:
+>_Entregame un resumen ejecutivo, con los principales riesgos encontrados, clausulas delicadas, beneficios faltantes, y recomendaciones en un archivo .docx._
+
+Construyendo prompt como el siguiente:
+>_Actua como un abogado especialista en derecho laboral. Revisa el contrato de trabajo, analiza las clausulas de proteccion de la empresa, riesgos laborales y beneficios que falten. Entregame un resumen ejecutivo, con los principales riesgos encontrados, clausulas delicadas, beneficios faltantes, y recomendaciones en un archivo .docx._
+
+En [RTFprompt](https://www.rtfprompt.com/framework.php) mencionan que tambien puedes agregarle el Tono, Audiencia, Meta, CTA (Llamada al acción) y longitud de respuesta para afinar y detallar a un mas lo que se espera.
+
+#### CO-STAR: Context + Object + Style + Tone + Audience + Response
+Esta estructura nacio en el Gobierno de Singapur, y fue popularizada por Sheila Teo en la [primera competencia de prompt engineering en ese pais](https://medium.com/data-science/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41). Su funcionamiento consiste en crear:
+
+- Un **Contexto**: la informacion de fondo que el modelo necesita para entender la situacion. Puede incluir el producto, problema, restricciones, datos disponibles o decisiones previas.
+- Un **Objetivo** _(Objective)_: la tarea concreta que debe resolver. Mientras mas especifico sea el objetivo, menos espacio queda para respuestas genericas.
+- Un **Estilo** _(Style)_: la forma de escritura o tipo de pieza que quieres producir. Por ejemplo: memo ejecutivo, correo comercial, analisis tecnico, guia paso a paso o publicacion de LinkedIn.
+- Un **Tono**: la actitud comunicacional de la respuesta. Puede ser formal, directo, pedagogico, persuasivo, sobrio, cercano o critico.
+- Una **Audiencia**: la persona o grupo que recibira la respuesta. No es lo mismo escribir para un CEO, un equipo tecnico, un cliente molesto o un estudiante principiante.
+- Una **Respuesta** esperada: el formato final de entrega. Aqui defines si quieres una tabla, JSON, lista de acciones, resumen ejecutivo, plantilla de correo o pasos numerados.
+
+El valor de CO-STAR esta en que separa partes que normalmente mezclamos en una sola frase. En lugar de decir "hazme un post profesional sobre mi producto", obligas al prompt a declarar el contexto, el objetivo, el estilo, el tono, la audiencia y la salida. Eso reduce ambiguedad y ahorra iteraciones.
+
+Ejemplo:
+
+```txt
+Contexto:
+Tengo una startup SaaS que ayuda a equipos de ventas B2B a priorizar leads usando datos de CRM. Vamos a lanzar una nueva funcionalidad de scoring predictivo.
+
+Objetivo:
+Redacta un correo de lanzamiento para usuarios actuales, explicando el beneficio de la nueva funcionalidad y motivando a probarla esta semana.
+
+Estilo:
+Correo breve de producto, parecido a una comunicacion de una empresa SaaS moderna.
+
+Tono:
+Claro, directo y confiable. Evita exageraciones y frases demasiado publicitarias.
+
+Audiencia:
+Gerentes de ventas y revenue operations que ya usan la plataforma.
+
+Respuesta:
+Entrega 3 asuntos de correo y una version final del email de maximo 180 palabras. Incluye una llamada a la accion al final.
+```
+
+Construyendo el prompt completo:
+
+> Tengo una startup SaaS que ayuda a equipos de ventas B2B a priorizar leads usando datos de CRM. Vamos a lanzar una nueva funcionalidad de scoring predictivo. Redacta un correo de lanzamiento para usuarios actuales, explicando el beneficio de la nueva funcionalidad y motivando a probarla esta semana. Usa un estilo de correo breve de producto, parecido a una comunicacion de una empresa SaaS moderna. El tono debe ser claro, directo y confiable, sin exageraciones ni frases demasiado publicitarias. La audiencia son gerentes de ventas y revenue operations que ya usan la plataforma. Entrega 3 asuntos de correo y una version final del email de maximo 180 palabras. Incluye una llamada a la accion al final.
+
+CO-STAR es especialmente util para tareas de comunicacion, marketing, documentacion, soporte, educacion y analisis ejecutivo, porque obliga a definir para quien se escribe y como debe verse la respuesta final. El [playbook de prompt engineering de GovTech Singapore](https://www.developer.tech.gov.sg/products/collections/data-science-and-artificial-intelligence/playbooks/prompt-engineering-playbook-beta-v3.pdf) lo presenta como una forma practica de estructurar prompts reutilizables.
+
+
+#### PAPA: Purpose + Audience + Persona + Action
+
+PAPA es una estructura mas simple que CO-STAR, pero muy util cuando quieres que el modelo entienda la intencion comunicacional de una tarea. Su objetivo es evitar prompts vagos como "escribeme algo sobre este tema" y convertirlos en una instruccion con proposito, receptor, voz y accion concreta.
+
+Su funcionamiento consiste en definir:
+
+- Un **Proposito** _(Purpose)_: para que necesitas la respuesta. Puede ser informar, persuadir, enseñar, vender, resumir, comparar, diagnosticar o tomar una decision.
+- Una **Audiencia**: quien va a leer o usar la respuesta. Esto cambia el vocabulario, el nivel de detalle, los ejemplos y la profundidad tecnica.
+- Una **Persona**: desde que rol o voz debe responder el modelo. Puede ser un especialista, una marca, un asesor, un profesor, un editor, un analista o una persona con un estilo concreto.
+- Una **Accion** _(Action)_: que debe hacer el modelo exactamente. Aqui defines el verbo principal: redacta, compara, resume, extrae, corrige, clasifica, convierte, propone o evalua.
+
+El valor de PAPA esta en que fuerza al prompt a responder cuatro preguntas basicas: por que lo necesito, para quien es, desde que voz debe hablar y que debe hacer. Es menos detallado que CO-STAR, pero por eso mismo es rapido de aplicar en tareas del dia a dia.
+
+Ejemplo:
+
+```txt
+Proposito:
+Quiero ayudar a nuevos desarrolladores a entender por que deben escribir mejores mensajes de commit.
+
+Audiencia:
+Desarrolladores junior que ya usan Git, pero todavia escriben commits muy genericos como "fix", "cambios" o "actualizacion".
+
+Persona:
+Actua como un tech lead paciente y directo, que explica con ejemplos practicos y sin sonar academico.
+
+Accion:
+Redacta una guia breve con 5 reglas para escribir buenos commits. Incluye ejemplos de commits malos y su version mejorada.
+```
+
+Construyendo el prompt completo:
+
+> Quiero ayudar a nuevos desarrolladores a entender por que deben escribir mejores mensajes de commit. La audiencia son desarrolladores junior que ya usan Git, pero todavia escriben commits muy genericos como "fix", "cambios" o "actualizacion". Actua como un tech lead paciente y directo, que explica con ejemplos practicos y sin sonar academico. Redacta una guia breve con 5 reglas para escribir buenos commits. Incluye ejemplos de commits malos y su version mejorada.
+
+PAPA funciona bien cuando tienes poco tiempo y necesitas mejorar una solicitud rapidamente. Es especialmente util para redactar correos, guias internas, publicaciones, explicaciones educativas, mensajes de soporte, documentacion corta y contenido donde la audiencia define gran parte de la respuesta.
+
+#### CRISPE
+
 
 ## 2. La regla base: objetivo, contexto y salida
 
