@@ -18,6 +18,17 @@ Esto puede frustrarte si te encuentras en tu estado de foco. Por ello en este po
 
 Además existe mucha literatura de _prompt engineering_, de la cual he simplificado y clasificado los marcos que he creído que tienen más trascendencia en la comunidad de prompter y que contienen hechos demostrados con artículos indexados.
 
+## Índice
+
+- [¿Qué es realmente el prompt engineering?](#qué-es-realmente-el-prompt-engineering)
+- [¿Qué técnicas de prompt engineering existen?](#qué-técnicas-de-prompt-engineering-existen)
+- [Marcos de estructura](#marcos-de-estructura)
+  - [RTF: Role + Task + Format](#rtf-role--task--format)
+  - [CO-STAR: Context + Object + Style + Tone + Audience + Response](#co-star-context--object--style--tone--audience--response)
+  - [CRISPE: Capacity + Role + Insight + Statement + Personality + Experiment](#crispe-capacity--role--insight--statement--personality--experiment)
+- [Conclusiones y reflexiones de estructuras de prompts](#conclusiones-y-reflexiones-de-estructuras-de-prompts)
+- [Referencias](#referencias)
+
 ## ¿Qué es realmente el `prompt engineering`?
 
 Prompt engineering es la práctica de diseñar instrucciones para que un modelo de lenguaje produzca resultados útiles, consistentes y verificables. La definición suena sencilla, pero en la práctica cambia mucho dependiendo de si estás usando un chatbot, una API, un modelo de razonamiento, un agente con herramientas o un flujo automatizado dentro de una aplicación.
@@ -158,7 +169,7 @@ Construyendo el prompt completo:
 
 CRISPE funciona bien para tareas donde necesitas criterio, comparación y alternativas. Es especialmente útil en estrategia, producto, arquitectura de software, análisis de negocio, documentación compleja, revisión de ideas y toma de decisiones. Puedes usar el siguiente [generador de prompts CRISPE](https://github.com/BaseMax/CRISPE-prompt-generator) para usarlo con tus LLMs.
 
-#### Conclusiones y reflexiones de estructuras de prompts
+## Conclusiones y reflexiones de estructuras de prompts
 
 Existen más marcos de estructura para generar un prompt. Generalmente los llaman frameworks y, como se mencionó antes, estos nacen de la comunidad y de las competencias de prompting. Otros marcos que puedes investigar son BAB, Tree of thought, RACE, FIVE S y Agile, entre otros. Puedes visitar el post [**"The complete guide to prompt engineering frameworks"**](https://www.parloa.com/knowledge-hub/prompt-engineering-frameworks/) escrito por Anjana Vasan, en el cual se da una visión más completa sobre estos marcos y es la fuente principal de esta sección.
 
