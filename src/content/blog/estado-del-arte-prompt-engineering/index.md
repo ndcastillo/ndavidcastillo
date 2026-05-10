@@ -5,6 +5,7 @@ author: "David Castillo"
 pubDate: 2026-05-09
 tags: ["RTF", "CO-STAR", "CRISPE", "Prompt Engineering"]
 lang: "es"
+heroImage: "./cover.png"
 draft: false
 ---
 
