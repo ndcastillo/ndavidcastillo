@@ -15,9 +15,9 @@ draft: false
 
 Ok, partamos de que todo el mundo ya utiliza los productos de los grandes modelos de IA generativa como Gemini, Chat GPT, Claude, DeepSeek y otros. Pero como te habrás dado cuenta, tienen un costo por tokens, y con el tiempo se te terminan gastando y debes esperar un tiempo para que se recarguen en tu cuenta. 
 
-Esto puede frustrarte si te encuentras en tu estado de foco. Por ello en este post desplegaré técnicas para mejorar y optimizar el uso de tus tokens a través del _prompt engineering_, para que no solo ahorres tokens, sino que tengas una comunicación _profesional_ con el prompter.
+Esto puede ser frustrarte si te encuentras en tu estado de foco. Por ello en este post desplegaré técnicas para mejorar y optimizar el uso de tus tokens a través del _prompt engineering_, para que no solo ahorres tokens, sino que tengas una comunicación _profesional_ con el prompter.
 
-Además existe mucha literatura de _prompt engineering_, de la cual he simplificado y clasificado los marcos que he creído que tienen más trascendencia en la comunidad de prompter y que contienen hechos demostrados con artículos indexados.
+Además existe mucha literatura de _prompt engineering_ en el internet, de la cual he simplificado y clasificado los marcos que he creído que tienen más trascendencia en la comunidad prompter.
 
 ## Índice
 
@@ -55,13 +55,13 @@ Existen muchas, pero se puede resumir en 4 clasificaciones:
 3. Técnicas de Contexto
 4. Técnicas de Fiabilidad
 
-Cada una de ellas se puede aplicar dependiendo de la tarea que se vaya a realizar y el modelo de LLM que se utilice, ya que un prompt que funcione en "Gemini" tal vez no tenga la misma respuesta en una que se use en "Chat GPT". En este post solo se verán los marcos de estructura como una inicialización en el prompt engineering.
+Cada una de ellas se puede aplicar dependiendo de la tarea que se vaya a realizar y el modelo de LLM que se utilice, ya que un prompt que se utilice en "Gemini" tendra una repsuesta diferente en "Chat GPT". En este post solo se verán los marcos de estructura como una inicialización en el prompt engineering.
 
 ## Marcos de estructura
 
 Los marcos de estructura son un conjunto de instrucciones para escribir un prompt, y ayudan a que el agente de IA comprenda lo que está buscando el usuario. Entre las más usadas se encuentran la RTF, CO-STAR y CRISPE, que son técnicas creadas por la comunidad prompter y han sido divulgadas fuertemente en las [_Prompt Battles_](https://promptbattle.com/). 
 
-Aunque también podrías utilizar un [generador de prompts](https://www.jotform.com/es/ai/prompt-generator/) didáctico seleccionando la plataforma y el modelo para crear tus prompts, y ahorrarte tiempo. 
+Aunque también podrías utilizar un [generador de prompts](https://www.jotform.com/es/ai/prompt-generator/) , deonde solo seleccionando la plataforma y el modelo puedes crear tus prompts, y ahorrarte tiempo. 
 
 ![Generador de Prompts](./generador-de-prompts.png)
 
@@ -185,7 +185,9 @@ Aunque he dividido solo en 3, debido a que es suficiente para comprender las est
 | **CO-STAR** (Context · Objective · Style · Tone · Audience · Response) | - Prompts de sistema (system prompt)<br>- Contenido con marca o voz específica<br>- Redacción profesional o institucional<br>- Cuando el tono importa mucho | - Tareas rápidas o de código<br>- Cuando el tono y estilo no importan<br>- Prompts simples de una sola instrucción |
 | **CRISPE** (Capacity · Role · Insight · Statement · Personality · Experiment) | - Prompts plantilla reutilizables<br>- Quieres comparar varias respuestas (Experiment)<br>- Asistentes especializados con contexto complejo<br>- Explorar distintos enfoques de una tarea | - Respuestas únicas o rápidas<br>- Su complejidad no justifica tareas simples<br>- Cuando no necesitas variantes del output |
 
-En sí podrás notar que cada una de las mencionadas tiene campos repetitivos y que se parecen mucho. Por ejemplo, colocar el formato que deseas para la conversación, estructurar el contexto de la consulta, a quién va dirigido, etc. En mi experiencia utilizo una combinación CO-STAR para empezar prompts, y la comunicación siguiente la realizo con lenguaje coloquial.
+En sí podrás notar que cada uno de los marcos mencionadas tiene campos repetitivos y que se parecen mucho. En mi experiencia utilizo una combinación CO-STAR para empezar prompts, y la comunicación siguiente la realizo con un lenguaje coloquial porque ya inicialice un contexto de comprensión, y si deseo alimentar un contexto utilizo las herramientas como _"Guarda en memoria esta informacion"_.
+
+En el próximo post se hablara sobre las técnicas de razonamiento y como han impactando en el comportamiento de los LLM, y ha diferencia entre un modelo como Chat GPT y Claude.
 
 ## Referencias
 
