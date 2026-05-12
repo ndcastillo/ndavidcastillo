@@ -5,10 +5,9 @@ author: "David Castillo"
 pubDate: 2026-05-03
 tags: ["Elevenlabs", "Chatterbox", "Youtube", "Clonación de voz", "Doblaje de audio", "Davinci Resolve"]
 lang: "es"
-draft: true
+draft: false
 ---
 
->tl;dr 
 
 Seguramente en algun momento te has preguntado como Mr. Beast o [Johnny Harris](https://www.youtube.com/@johnnyharris) doblan sus videos a multiples idiomas en Youtube, Mr Beast por ejemplo contrata un actor de doblaje y un editor de audio, mientras que Johnny Harris utiliza  un [clonador de voz](https://arxiv.org/html/2604.26136) basado en su timbre de voz para obtener un video homogeneizado en un idioma distinto, luego lo agregan en una pista de audio de configuración en Youtube y logran expandir el alcance de sus videos a otros paises.
 
@@ -186,11 +185,24 @@ Por lo que por cada segmento podremos obtener un numero X de archivos `.wav` que
 
 ![Segmentación de audios](./segmentacion.png)
 
+Y que la arquitectura seria:
 
+![](./arquitectura_script.png)
 
 ## Unión de segmentos
 
-Todo lo mencionado anteriormente lo podemos ver en este repositorio, puedes realizar un fork y comentarme que te parecio. El resultado final lo puedes evidenciar, mantiene el timbre de voz, un acento en ingles casi neutral, y en la mayoria de los segmentos resguarda y respeta las marcas de tiempo de inicio y final, y las que no logra obtenerla se mantiene un silencio, que curiosamente me he fijado dichos silencios  en el video de Johnny Harris del principio y en el minuto 
+El resultado final lo puedes evidenciar, mantiene el timbre de voz, un acento en ingles casi neutral, y en la mayoria de los segmentos resguarda y respeta las marcas de tiempo de inicio y final, y las que no logra obtenerla se mantiene un silencio, que curiosamente me he fijado dichos silencios  que existen en los videos de Johnny Harris. Usa la opción de "Cambiar Pista" en el video para revisar los resultados.
+
+
+<iframe
+  width="100%"
+  style="aspect-ratio: 9/16; max-width: 400px; display: block; margin: 0 auto;"
+  src="https://www.youtube.com/embed/KQ3MnCnerw8"
+  title="OpenClaw - Estado del Arte"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
 
 
 ## Ideas de comercialización
@@ -198,3 +210,14 @@ Todo lo mencionado anteriormente lo podemos ver en este repositorio, puedes real
 Como observas el modelo que acabamos de realizar ya es un producto miniamente viable (MVP) en potencia, con ciertos ajustos y despliegue se puede generar una _lista de espera_ con una prueba gratuita para saber cuanto la gente esta dispuesta a pagar para doblar sus videos a otros idiomas utilizando una IA de clonación de voz.
 
 Aunque para ser sinceros el nicho de mercado en el cuál puede funcionar esto es dentro de los editores de video y creadores de contenido. Un producto final puede ser un plugin para software de edición de video como davinci resolve, adobe premiere y final cut pro, donde para un audio de cualquier pista realice 1. la transcripción de audio a texto, 2. la traducción al idioma a doblar y por ultimo 3. la clonación de voz para el doblaje, tambien puede funcionar como una aplicación web de doblaje de audios en crudo para obtener su contraparte en otros idiomas con su mismo timbre de voz como lo hace [elevenlabs](https://elevenlabs.io/).
+
+## Referencias
+
+- Abebe, A. G., & Moslem, Y. (2026). *One voice, many tongues: Cross-lingual voice cloning for scientific speech*. arXiv. https://arxiv.org/html/2604.26136
+- Du, Z., Chen, Q., Zhang, S., Hu, K., Lu, H., Yang, Y., Hu, H., Zheng, S., Gu, Y., Ma, Z., Gao, Z., & Yan, Z. (2024). *CosyVoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens*. arXiv. https://arxiv.org/abs/2407.05407
+- ElevenLabs. (s. f.). *ElevenLabs*. Recuperado el 12 de mayo de 2026, de https://elevenlabs.io/
+- Harris, J. (s. f.). *Johnny Harris* [Canal de YouTube]. YouTube. Recuperado el 12 de mayo de 2026, de https://www.youtube.com/@johnnyharris
+- Moroney, T. (s. f.). *AutoSubs*. Recuperado el 12 de mayo de 2026, de https://tom-moroney.com/auto-subs/
+- Resemble AI. (2025). *Chatterbox TTS* [Repositorio de GitHub]. GitHub. https://github.com/resemble-ai/chatterbox
+- Resemble AI. (s. f.). *Chatterbox: Open source text-to-speech*. Recuperado el 12 de mayo de 2026, de https://www.resemble.ai/learn/models/chatterbox
+- Castillo, D. (2026). *OpenClaw - Estado del Arte* [Video]. YouTube. https://youtu.be/KQ3MnCnerw8
