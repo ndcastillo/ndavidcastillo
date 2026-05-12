@@ -4,6 +4,7 @@ description: "Existen muchas herramientas de doblaje de voz, elevenlabs es la ma
 author: "David Castillo"
 pubDate: 2026-05-03
 tags: ["Elevenlabs", "Chatterbox", "Youtube", "Clonación de voz", "Doblaje de audio", "Davinci Resolve"]
+heroImage: "./cover-.png"
 lang: "es"
 draft: false
 ---
