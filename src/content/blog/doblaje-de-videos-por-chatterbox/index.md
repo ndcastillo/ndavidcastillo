@@ -1,5 +1,5 @@
 ---
-title: "¿Doblar audios utilizando el mismo trimbre de voz?"
+title: "Doblaje de videos a otros idiomas - Análisis y Particularidades"
 description: "Existen muchas herramientas de doblaje de voz, elevenlabs es la mas popular de ellas, pero en este post lo veremos utilizando una herramienta open source y lograremos obtener un doblaje lo suficientemente eficaz para ser usado en producción."
 author: "David Castillo"
 pubDate: 2026-05-03
