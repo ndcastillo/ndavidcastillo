@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import AudioWaveform from '../components/AudioWaveform.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -161,7 +162,6 @@ const postSlug = slug || Astro.url.pathname.split('/').filter(Boolean).pop();
 				font-size: 0.9rem;
 				font-weight: 500;
 				transition: all 0.2s ease;
-        // margin-top: 1rem;
 			}
 			.edit-button:hover {
 				background: rgba(0, 0, 0, 0.08);
@@ -271,5 +271,6 @@ li{
 			</article>
 		</main>
 		<Footer />
+		<AudioWaveform />
 	</body>
 </html>

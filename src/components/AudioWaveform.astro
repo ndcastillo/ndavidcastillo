@@ -1,0 +1,201 @@
+<script>
+	import WaveSurfer from 'wavesurfer.js';
+	import SpectrogramPlugin from 'wavesurfer.js/dist/plugins/spectrogram.esm.js';
+
+	const formatTime = (seconds: number) => {
+		if (!Number.isFinite(seconds)) return '0:00';
+
+		const minutes = Math.floor(seconds / 60);
+		const remainingSeconds = Math.floor(seconds % 60);
+
+		return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+	};
+
+	document.querySelectorAll<HTMLElement>('.audio-spectrum').forEach((player) => {
+		if (player.dataset.ready === 'true') return;
+
+		const url = player.dataset.src;
+		const title = player.dataset.title || 'Audio';
+		const waveform = player.querySelector<HTMLElement>('[data-waveform]');
+		const spectrogram = player.querySelector<HTMLElement>('[data-spectrogram]');
+		const playButton = player.querySelector<HTMLButtonElement>('[data-play]');
+		const currentTime = player.querySelector<HTMLElement>('[data-current-time]');
+		const duration = player.querySelector<HTMLElement>('[data-duration]');
+
+		if (!url || !waveform || !spectrogram || !playButton || !currentTime || !duration) return;
+
+		player.dataset.ready = 'true';
+		playButton.disabled = true;
+		playButton.setAttribute('aria-label', `Reproducir ${title}`);
+
+		const wavesurfer = WaveSurfer.create({
+			container: waveform,
+			url,
+			height: 28,
+			barWidth: 2,
+			barGap: 2,
+			barRadius: 3,
+			cursorWidth: 0,
+			normalize: true,
+			waveColor: '#94a3b8',
+			progressColor: '#2563eb',
+			dragToSeek: true,
+			plugins: [
+				SpectrogramPlugin.create({
+					container: spectrogram,
+					height: 150,
+					labels: true,
+					labelsBackground: '#0f172a',
+					labelsColor: '#e2e8f0',
+					labelsHzColor: '#94a3b8',
+					scale: 'mel',
+					fftSamples: 1024,
+					frequencyMin: 20,
+					frequencyMax: 12000,
+					gainDB: 22,
+					rangeDB: 80,
+					colorMap: 'roseus',
+				}),
+			],
+		});
+
+		wavesurfer.on('ready', () => {
+			playButton.disabled = false;
+			duration.textContent = formatTime(wavesurfer.getDuration());
+		});
+
+		wavesurfer.on('timeupdate', (time) => {
+			currentTime.textContent = formatTime(time);
+		});
+
+		wavesurfer.on('play', () => {
+			playButton.textContent = 'Pausar';
+			playButton.setAttribute('aria-label', `Pausar ${title}`);
+			player.dataset.playing = 'true';
+		});
+
+		wavesurfer.on('pause', () => {
+			playButton.textContent = 'Reproducir';
+			playButton.setAttribute('aria-label', `Reproducir ${title}`);
+			player.dataset.playing = 'false';
+		});
+
+		wavesurfer.on('finish', () => {
+			playButton.textContent = 'Reproducir';
+			playButton.setAttribute('aria-label', `Reproducir ${title}`);
+			player.dataset.playing = 'false';
+		});
+
+		playButton.addEventListener('click', () => {
+			void wavesurfer.playPause();
+		});
+	});
+</script>
+
+<style is:global>
+	.audio-spectrum {
+		display: grid;
+		gap: 0.85rem;
+		margin: 1rem 0 1.4rem;
+		padding: 1rem;
+		border: 1px solid rgba(90, 105, 130, 0.18);
+		border-radius: 8px;
+		background: color-mix(in srgb, rgb(var(--gray-light)) 58%, white);
+		box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+	}
+
+	.audio-spectrum__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.audio-spectrum__title {
+		margin: 0;
+		font-size: 0.98rem;
+		font-weight: 700;
+		line-height: 1.2;
+		color: rgb(var(--gray-dark));
+	}
+
+	.audio-spectrum__time {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+		font-size: 0.82rem;
+		color: rgb(var(--gray));
+		white-space: nowrap;
+	}
+
+	.audio-spectrum__spectrogram {
+		min-height: 150px;
+		overflow: hidden;
+		border: 1px solid rgba(15, 23, 42, 0.12);
+		border-radius: 7px;
+		background: #0f172a;
+		cursor: pointer;
+	}
+
+	.audio-spectrum__waveform {
+		min-height: 28px;
+		cursor: pointer;
+	}
+
+	.audio-spectrum__controls {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.audio-spectrum__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 116px;
+		min-height: 38px;
+		padding: 0.5rem 0.85rem;
+		border: 1px solid rgba(37, 99, 235, 0.38);
+		border-radius: 7px;
+		color: white;
+		background: #2563eb;
+		font: inherit;
+		font-size: 0.9rem;
+		font-weight: 700;
+		line-height: 1;
+		cursor: pointer;
+		transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+	}
+
+	.audio-spectrum__button:hover:not(:disabled) {
+		background: #1d4ed8;
+		border-color: #1d4ed8;
+		transform: translateY(-1px);
+	}
+
+	.audio-spectrum__button:disabled {
+		cursor: wait;
+		opacity: 0.58;
+	}
+
+	.audio-spectrum[data-playing='true'] .audio-spectrum__button {
+		background: #0f172a;
+		border-color: #0f172a;
+	}
+
+	@media (max-width: 520px) {
+		.audio-spectrum {
+			padding: 0.85rem;
+		}
+
+		.audio-spectrum__header,
+		.audio-spectrum__controls {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 0.6rem;
+		}
+
+		.audio-spectrum__button {
+			width: 100%;
+		}
+	}
+</style>
