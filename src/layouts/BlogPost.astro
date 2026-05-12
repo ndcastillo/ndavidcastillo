@@ -23,7 +23,7 @@ const postSlug = slug || Astro.url.pathname.split('/').filter(Boolean).pop();
 
 <html lang="es">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={heroImage} />
 		<meta name="author" content={SITE_AUTHOR} />
 		<meta name="robots" content="index, follow" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" />
