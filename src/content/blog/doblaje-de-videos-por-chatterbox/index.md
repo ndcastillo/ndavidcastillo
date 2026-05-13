@@ -9,6 +9,17 @@ lang: "es"
 draft: false
 ---
 
+>tl;dr Modificando chatterbox para el uso de archivos `.srt` se puede doblar videos a una decena idiomas sin pagar una suscripción.
+
+## Índice
+
+- [Uso de archivos `.srt` o `.json`](#uso-de-archivos-srt-o-json)
+- [Lenguajes, acentos y particularidades de agrupación](#lenguajes-acentos-y-particularidades-de-agrupación)
+- [Acentos](#acentos)
+- [Unión de segmentos](#unión-de-segmentos)
+- [Ideas de comercialización](#ideas-de-comercialización)
+- [Conclusiones, Reflexiones y uso etico de los clonadores de voz](#conclusiones-reflexiones-y-uso-etico-de-los-clonadores-de-voz)
+- [Referencias](#referencias)
 
 Seguramente en algun momento te has preguntado como Mr. Beast o [Johnny Harris](https://www.youtube.com/@johnnyharris) doblan sus videos a multiples idiomas en Youtube, Mr Beast por ejemplo contrata un actor de doblaje y un editor de audio, mientras que Johnny Harris utiliza  un [clonador de voz](https://arxiv.org/html/2604.26136) basado en su timbre de voz para obtener un video homogeneizado en un idioma distinto, luego lo agregan en una pista de audio de configuración en Youtube y logran expandir el alcance de sus videos a otros paises.
 
