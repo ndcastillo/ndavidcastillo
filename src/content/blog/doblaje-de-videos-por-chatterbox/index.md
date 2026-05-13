@@ -186,13 +186,23 @@ Por lo que por cada segmento podremos obtener un numero X de archivos `.wav` que
 
 ![Segmentación de audios](./segmentacion.png)
 
-Y que la arquitectura seria:
+
+### Acentos 
+Chatterbox clonara la voz con tu mismo timbre y acento de voz, por ejemplo para el caso de que queramos doblar un audio del español al ingles, al colocar texto a decir en ingles el resultado sera un audio en ingles con acento latino. ¿Como arreglar esto?, Chatterbox trae un parametro de pesos, denominado [cfg_weight](https://chatterboxtts.com/docs) que tomara un valor de 0 a 1 para que de mas peso al estilo de habla del audio de referencia, donde 0 le dara el estilo del ingles neutral (con el cual fue entrenado) y 1 para que le da mas peso al estilo de la voz de referencia.
+
+Ahora como sabes la diversidad de acentos y dialectos de los lenguajes dependera de la región del hablante, ya que el acentro por ejemplo del ingles new yorkino sera diferente del acento de alguien que vive en San Francisco, o que el acento del frances de Paris sera diferente al frances de Lyon, y lo mismo para las demas lenguas. Ahora, ¿Como chatterbox maneja los acentos?. En si chatterbox no tiene soporte para tratar con los diversos acentos de las lenguas, ya que el conjuntos de datos de entrenamiento se lo realizo con un unico acento, por ejemplo para un ingles neutral, para un frances neutral, etc. Y no, Elevenlabs tampoco da soporte para elegir un acento en otro idioma.
+
+**¿Por que no dan soporte?** Porque el objetivo de estas herramietnas fue clonar la voz de referencia, no hacer un doblaje de guiones. Puedes hacer una lectura rápida sobre este tema en este articulo que habla sobre la [preservación de voz](https://arxiv.org/pdf/2405.13162).
+
+Aquí se abre las puertas y la oportunidad de diseñar modelos de clonación de voz que pueda replicar acentos locales y dialectos regionales de otras lenguas, obviamente seria un trabajo de investigación, tokenización, analisis de espectro, transformación, codificación, entrenamiento y despliegue del modelo. 
+
+Siguiendo el enfoque del post, con ello se puede crear una arquitectura, para adaptar el clonador de voz a un `doblador de voz`, en la cuál se propone la siguiente:
 
 ![](./arquitectura_script.png)
 
 ## Unión de segmentos
 
-El resultado final lo puedes evidenciar, mantiene el timbre de voz, un acento en ingles casi neutral, y en la mayoria de los segmentos resguarda y respeta las marcas de tiempo de inicio y final, y las que no logra obtenerla se mantiene un silencio, que curiosamente me he fijado dichos silencios  que existen en los videos de Johnny Harris. Usa la opción de "Cambiar Pista" en el video para revisar los resultados.
+El resultado final lo puedes evidenciar en el siguiente video cargado en youtube utiliza la opción de "Cambiar de Pista", si observas mantiene el timbre de voz, un acento en ingles casi neutral, y en la mayoria de los segmentos resguarda y respeta las marcas de tiempo de inicio y final, y las que no logra obtenerla se mantiene un silencio, que curiosamente me he fijado dichos silencios  que existen en los videos de Johnny Harris, con lo que infiere que este utilizando alguna herramienta de clonación de voz para doblar sus videos.
 
 
 <iframe
@@ -208,9 +218,20 @@ El resultado final lo puedes evidenciar, mantiene el timbre de voz, un acento en
 
 ## Ideas de comercialización
 
-Como observas el modelo que acabamos de realizar ya es un producto miniamente viable (MVP) en potencia, con ciertos ajustos y despliegue se puede generar una _lista de espera_ con una prueba gratuita para saber cuanto la gente esta dispuesta a pagar para doblar sus videos a otros idiomas utilizando una IA de clonación de voz.
+Como observas el modelo que acabamos de realizar ya es un producto miniamente viable (MVP) en potencia, con ciertos ajustos y despliegue se puede generar una _lista de espera_ con una prueba gratuita para saber cuanto la gente esta dispuesta a pagar para doblar sus videos a otros idiomas utilizando una IA de clonación de voz. Obviamente elegi Chatterbox debido a que tiene una licencia de uso, modificación y comercialización.
 
-Aunque para ser sinceros el nicho de mercado en el cuál puede funcionar esto es dentro de los editores de video y creadores de contenido. Un producto final puede ser un plugin para software de edición de video como davinci resolve, adobe premiere y final cut pro, donde para un audio de cualquier pista realice 1. la transcripción de audio a texto, 2. la traducción al idioma a doblar y por ultimo 3. la clonación de voz para el doblaje, tambien puede funcionar como una aplicación web de doblaje de audios en crudo para obtener su contraparte en otros idiomas con su mismo timbre de voz como lo hace [elevenlabs](https://elevenlabs.io/).
+Aunque para ser sinceros el nicho de mercado en el cuál puede funcionar esto es dentro de los editores de video y creadores de contenido. Un producto final puede ser un plugin para software de edición de video como davinci resolve, adobe premiere y final cut pro, donde para un audio de cualquier pista realice 1. la transcripción de audio a texto, 2. la traducción al idioma a doblar y por ultimo 3. la clonación de voz para el doblaje, tambien puede funcionar como una aplicación web de doblaje de audios, que en si es el modelo de negocio de [elevenlabs](https://elevenlabs.io/).
+
+El valor agregado puede ser la implementación de acentos y dialectos de ciertas regiones, pero el esfuerzo viene de entrenar dichos modelos, el uso de guiones, y talvez la adaptación a la jerga de cierta localidad.
+
+## Conclusiones, Reflexiones y uso etico de los clonadores de voz
+
+La aplicación que lo hemos dado en este post, es con el propósito de expandir el alcance de videos a una audiencia de otros idiomas, esto realizandolo desde una herramienta OpenSource. Y si bien el resutlado no alcanza al resultado que un actor de doblaje te podria dar, es aceptable y la mayor ventaja es que se lo puede realizar en una docena de lenguas.
+
+Sin embargo, cabe mencionar el uso etico de los clonadores, que como **builders** deben ser usados con la mayor responsabilidad y de buen juicio, y no para vulnerar o perjudicar la reputación de alguien.
+
+Dicho lo ultimo como un pequeño recordatorio, termino el post mencionado que seguire una serie de post enfocados al analisis frecuencial de ondas sonoras, deteccion de clonacion de voz, generacion de musica con IA, y demas aplicaciones que se encuentren tendencia.
+
 
 ## Referencias
 
@@ -222,3 +243,5 @@ Aunque para ser sinceros el nicho de mercado en el cuál puede funcionar esto es
 - Resemble AI. (2025). *Chatterbox TTS* [Repositorio de GitHub]. GitHub. https://github.com/resemble-ai/chatterbox
 - Resemble AI. (s. f.). *Chatterbox: Open source text-to-speech*. Recuperado el 12 de mayo de 2026, de https://www.resemble.ai/learn/models/chatterbox
 - Castillo, D. (2026). *OpenClaw - Estado del Arte* [Video]. YouTube. https://youtu.be/KQ3MnCnerw8
+
+Pd: He dejado intencionalmente como experimentación faltas ortográficas, con el propósito de obtener un PR de alguien que las corrija y no usar una IA.
