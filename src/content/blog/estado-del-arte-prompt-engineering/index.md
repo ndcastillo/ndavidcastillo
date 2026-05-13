@@ -9,7 +9,7 @@ heroImage: "./cover.png"
 draft: false
 ---
 
-> **tl;dr** El prompt engineering no se trata de escribirle a la IA de forma trivial, sino de reducir ambigüedades. En esta primera parte se revisan marcos de estructura como **RTF**, **CO-STAR** y **CRISPE**, que ayudan a definir rol, contexto, objetivo, tono, audiencia, formato y criterios de respuesta. Al dominarlas puedes ahorrar tokens, obtener respuestas más consistentes y comunicarte mejor con los modelos de IA.
+> **tl;dr** El prompt engineering no se trata de escribirle a la IA de forma trivial, sino de reducir ambigüedades. En esta primera parte se revisan marcos de estructura como **RTF**, **CO-STAR** y **CRISPE**, que ayudan a definir los roles, contextos, objetivos, tonos, audiencias, formatos y criterios de respuesta. Al dominarlas puedes ahorrar tokens, obtener respuestas más consistentes y comunicarte mejor con los modelos de IA.
 
 ---
 
