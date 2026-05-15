@@ -1,5 +1,5 @@
 ---
-title: "Doblaje de videos a otros idiomas - Análisis y particularidades"
+title: "Doblaje multilingüe con clonación de voz open source - Análisis y particularidades"
 description: "Existen muchas herramientas de doblaje de voz. ElevenLabs es la más popular de ellas, pero en este post lo veremos utilizando una herramienta open source y lograremos obtener un doblaje lo suficientemente eficaz para ser usado en producción."
 author: "David Castillo"
 pubDate: 2026-05-12
